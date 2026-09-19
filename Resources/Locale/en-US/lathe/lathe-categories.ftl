@@ -1,67 +1,21 @@
 # Generic
-lathe-category-circuitry = Circuitry
-lathe-category-clothing = Clothing
-lathe-category-lights = Lights
-lathe-category-machines = Machines
-lathe-category-parts = Parts
-lathe-category-tools = Tools
-lathe-category-weapons = Weapons
-
+lathe-category-ammo = Боеприпасы
+lathe-category-circuitry = Электроника
+lathe-category-lights = Лампы
+lathe-category-mechs = Мехи
+lathe-category-parts = Компоненты
+lathe-category-robotics = Робототехника
+lathe-category-tools = Инструменты
+lathe-category-weapons = Вооружение
 # Biogen
-lathe-category-food = Food
-lathe-category-chemicals = Chemicals
-lathe-category-materials = Materials
-
-# Circuit imprinter
-lathe-category-computers = Computers
-lathe-category-engineering = Engineering
-lathe-category-general = General
-lathe-category-medical = Medical
-lathe-category-research = Research
-lathe-category-security = Security
-lathe-category-service = Service
-lathe-category-supply = Supply
-
-# Cutter
-lathe-category-tiles = Tiles
-lathe-category-circuit-tile = Circuit
-lathe-category-concrete-tile = Concrete
-lathe-category-dark-tile = Dark
-lathe-category-faux-tile = Faux
-lathe-category-maints-tile = Maints
-lathe-category-marble = Marble
-lathe-category-steel-tile = Steel
-lathe-category-white-tile = White
-lathe-category-wood-tile = Wood
-
-# Science
-lathe-category-mechs = Mechs
-lathe-category-modules = Modules
-lathe-category-robotics = Robotics
-
-# Security TechFab
-lathe-category-ammo = Ammo
-lathe-category-boxes = Boxes
-lathe-category-magazines = Magazines
-
+lathe-category-food = Пища
+lathe-category-chemicals = Химикаты
+lathe-category-materials = Материалы
 # Uniform
-lathe-category-bedsheets = Bedsheets
-lathe-category-carpets = Carpets
-lathe-category-coats = Coats
-lathe-category-command = Command
-lathe-category-hats = Hats
-lathe-category-jumpsuits = Jumpsuits
-lathe-category-neck = Neck
-
-# Mechs
-lathe-category-mechs-vim = Vim
-lathe-category-mechs-honker = H.O.N.K.
-lathe-category-mechs-hamptr = H.A.M.P.T.R.
-lathe-category-mechs-ripley = Ripley
-lathe-category-mechs-ripleymkii = Ripley MK-II
-lathe-category-mechs-paddy = Paddy
-lathe-category-mechs-clarke = Clarke
-lathe-category-mechs-gygax = Gygax
-lathe-category-mechs-durand = Durand
-lathe-category-mechs-equipment = Mech equipment
-lathe-category-mechs-weapons = Mech weapons
+lathe-category-bedsheets = Одеяла
+lathe-category-carpets = Ковры
+lathe-category-coats = Халаты
+lathe-category-command = Командование
+lathe-category-hats = Шляпы
+lathe-category-jumpsuits = Комбинезоны
+lathe-category-neck = Шея

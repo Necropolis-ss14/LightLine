@@ -1,9 +1,6 @@
-﻿
 ### Announcement
 
-earlyleave-cryo-job-unknown = Unknown
+earlyleave-cryo-job-unknown = Должность неизвестна
 # {$entity} available for GENDER function purposes
-earlyleave-cryo-announcement = {$character} ({$job}) has entered cryogenic storage!
-earlyleave-cryo-sender = Station
-
-cryostorage-paused-map-name = Cryosleeper body storage map
+earlyleave-cryo-announcement = Тело { $character } ({ $job }) было перемещено в криогенное хранилище!
+earlyleave-cryo-sender = Станция

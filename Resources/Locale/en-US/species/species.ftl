@@ -1,13 +1,12 @@
-﻿## Species Names, Laspi are Starlight
+## Species Names
 
-species-name-human = Human
-species-name-dwarf = Dwarf
-species-name-reptilian = Reptilian
-species-name-slime = Laspi
-species-name-diona = Diona
-species-name-arachnid = Arachnid
-species-name-moth = Moth Person
-species-name-skeleton = Skeleton
-species-name-vox = Vox
-species-name-gingerbread = delicious baked good
-species-name-vulpkanin = Vulpkanin
+species-name-human = Человек
+species-name-dwarf = Дворф
+species-name-reptilian = Унатх
+species-name-slime = Слаймолюд
+species-name-diona = Диона
+species-name-arachnid = Арахнид
+species-name-moth = Ниан
+species-name-skeleton = Скелет
+species-name-vox = Вокс
+snail-hurt-by-salt-popup = Солевой раствор жжёт как кислота!

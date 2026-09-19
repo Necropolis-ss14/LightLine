@@ -1,11 +1,11 @@
-job-name-magistrate = Magistrate
+job-name-magistrate = Магистрат
 job-name-ntrep = NanoTrasen Representative
 job-name-iaa = Internal Affairs Agent
 job-name-blueshield = Blueshield Officer
 job-name-ntncblueshield = NanoTrasen Navy Corps Marine
 job-name-greenshield = Greenshield Officer
 job-name-miningspec = Mining Specialist
-job-name-surgeon = Surgeon
+job-name-surgeon = Хирург
 job-name-mailtech = Mail Technician
 job-name-centcomm = CentComm Official
 job-name-centcommoperator = CentComm Operator

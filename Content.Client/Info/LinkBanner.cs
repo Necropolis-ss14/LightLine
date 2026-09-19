@@ -38,22 +38,7 @@ namespace Content.Client.Info
             AddInfoButton("server-info-forum-button", CCVars.InfoLinksForum);
             AddInfoButton("server-info-telegram-button", CCVars.InfoLinksTelegram);
 
-            // NullLink start
-            var button = new Button { Text = Loc.GetString("server-info-connect-discord-button") };
-            button.OnPressed += _ => {
-                var link = _playerRoles.GetDiscordLink();
-                if(link != null)
-                    uriOpener.OpenUri(link);
-            };
-            buttons.AddChild(button);
 
-            var steamButton = new Button { Text = Loc.GetString("server-info-connect-steam-button") };
-            steamButton.OnPressed += _ => {
-                var link = _playerRoles.GetSteamLink();
-                if (link != null)
-                    uriOpener.OpenUri(link);
-            };
-            buttons.AddChild(steamButton);
             // NullLink end
 
             var guidebookController = UserInterfaceManager.GetUIController<GuidebookUIController>();

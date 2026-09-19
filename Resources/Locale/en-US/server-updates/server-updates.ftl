@@ -1,3 +1,3 @@
-﻿server-updates-received = Update has been received, server will automatically restart for update at the end of this round.
-server-updates-shutdown = Server is shutting down for update and will automatically restart.
-server-updates-shutdown-uptime = Server is shutting down for periodic cleanup and will automatically restart.
+server-updates-received = Сеть Reserve получила обновление. Сервер будет автоматически перезапущен в конце этого раунда для применения новых инструкций.
+server-updates-shutdown = Сервер выключается для обновления и будет автоматически перезапущен.
+server-updates-shutdown-uptime = Сервер выключается для периодической очистки и будет автоматически перезапущен.
