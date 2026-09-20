@@ -16,3 +16,5 @@ gas-nitrous-oxide = Оксид азота
 gas-nitrous-oxide-abbreviation = N₂O
 gas-frezon = Фрезон
 gas-frezon-abbreviation = F
+
+gas-unknown-abbreviation = X

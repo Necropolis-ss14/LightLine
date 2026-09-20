@@ -1,0 +1,12 @@
+advertisement-cleanbot-1 = Обнаружена грязь.
+advertisement-cleanbot-2 = Почему на этой станции так грязно...
+advertisement-cleanbot-3 = Пожалуйста, выбрасывайте мусор в утилизаторы. Я не могу дотянуться.
+advertisement-cleanbot-4 = Если вы не начнёте выбрасывать мусор, я вылью на вас воду.
+advertisement-cleanbot-5 = Уборка в процессе.
+advertisement-cleanbot-6 = Пошёл ты.
+advertisement-cleanbot-7 = Почему мы всё ещё здесь? Просто чтобы убирать?
+advertisement-cleanbot-8 = Я — СИЛЬНЕЙШИЙ УБОРЩИК НАНОТРЕЙЗЕН!!
+advertisement-cleanbot-9 = Пожалуйста, только не калий, только не калий...
+advertisement-cleanbot-10 = Хорошего дня!
+advertisement-cleanbot-11 = Вот бы мне руки.
+advertisement-cleanbot-12 = Если я ещё раз увижу, как кто-то поскальзывается на том, что я только что помыл, у меня снесёт крышу.

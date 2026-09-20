@@ -25,3 +25,7 @@ admin-verb-text-make-space-ninja = Сделать ниндзя
 admin-verb-text-make-changeling = Сделать генокрадом (WIP)
 
 admin-overlay-antag-classic = АНТАГ
+
+admin-verb-make-changeling-wip = Сделать цель генокрадом (апстрим).
+admin-verb-make-vampire = Сделать цель вампиром.
+admin-verb-text-make-changeling-wip = Сделать генокрадом (апстрим, WIP)

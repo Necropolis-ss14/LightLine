@@ -402,3 +402,5 @@ stack-exo-corner-nw-floor = экзодермический угловой пол
 stack-exo-corner-se-floor = экзодермический угловой пол Юго-восток
 stack-exo-corner-sw-floor = экзодермический угловой пол Юго-запад
 stack-exo-borg-floor = мехадермический пол
+stack-speso = спесо
+stack-telebond = телебонд

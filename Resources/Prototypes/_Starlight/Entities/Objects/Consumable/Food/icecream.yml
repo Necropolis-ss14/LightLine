@@ -58,10 +58,10 @@
       - IceCream
 
 - type: entity
-  name: vanilla ice cream
+  name: ent-FoodVanillaIceCream
   parent: FoodIceCreamBase
   id: FoodVanillaIceCream
-  description: A bowl of vanilla ice cream every spacer knows.
+  description: ent-FoodVanillaIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -81,10 +81,10 @@
         Quantity: 15
 
 - type: entity
-  name: chocolate ice cream
+  name: ent-FoodChocolateIceCream
   parent: FoodIceCreamBase
   id: FoodChocolateIceCream
-  description: A bowl of rich chocolate with dark chocolate chips and a cinnamon stick.
+  description: ent-FoodChocolateIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -106,10 +106,10 @@
         Quantity: 10
 
 - type: entity
-  name: strawberry ice cream
+  name: ent-FoodStrawberryIceCream
   parent: FoodIceCreamBase
   id: FoodStrawberryIceCream
-  description: Pink strawberry ice cream with real strawberries!
+  description: ent-FoodStrawberryIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -129,10 +129,10 @@
         Quantity: 15
 
 - type: entity
-  name: mint chocolate ice cream
+  name: ent-FoodMintChocolateIceCream
   parent: FoodIceCreamBase
   id: FoodMintChocolateIceCream
-  description: Crisp mint ice cream with crunchy chocolate chips.
+  description: ent-FoodMintChocolateIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -154,10 +154,10 @@
         Quantity: 13
 
 - type: entity
-  name: coffee ice cream
+  name: ent-FoodCoffeeIceCream
   parent: FoodIceCreamBase
   id: FoodCoffeeIceCream
-  description: Coffee flavored ice cream with a few toasted coffee beans.
+  description: ent-FoodCoffeeIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -179,10 +179,10 @@
         Quantity: 5
 
 - type: entity
-  name: snowcream special ice cream
+  name: ent-FoodSnowcreamIceCream
   parent: FoodIceCreamBase
   id: FoodSnowcreamIceCream
-  description: Vanilla ice cream with wafer cookies in a familiar shape.
+  description: ent-FoodSnowcreamIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -202,10 +202,10 @@
         Quantity: 15
 
 - type: entity
-  name: sherbet ice cream
+  name: ent-FoodSherbetIceCream
   parent: FoodIceCreamBase
   id: FoodSherbetIceCream
-  description: Lemon, Lime, Orange, and Strawberry in a fruity tangy blend.
+  description: ent-FoodSherbetIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -225,10 +225,10 @@
         Quantity: 15
 
 - type: entity
-  name: banana split ice cream
+  name: ent-FoodBananaSplitIceCream
   parent: FoodIceCreamBase
   id: FoodBananaSplitIceCream
-  description: The holy trio of ice cream.
+  description: ent-FoodBananaSplitIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -251,10 +251,10 @@
 
 
 - type: entity
-  name: orange swirl ice cream
+  name: ent-FoodOrangeSwirlIceCream
   parent: FoodIceCreamBase
   id: FoodOrangeSwirlIceCream
-  description: Vanilla ice cream with orange sherbet swirled together.
+  description: ent-FoodOrangeSwirlIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -274,10 +274,10 @@
         Quantity: 15
 
 - type: entity
-  name: blueberry ice cream
+  name: ent-FoodBlueberryIceCream
   parent: FoodIceCreamBase
   id: FoodBlueberryIceCream
-  description: Ice cream mixed with blue berries.
+  description: ent-FoodBlueberryIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -297,10 +297,10 @@
         Quantity: 15
 
 - type: entity
-  name: neapolitan ice cream
+  name: ent-FoodNeapolitanIceCream
   parent: FoodIceCreamBase
   id: FoodNeapolitanIceCream
-  description: Vanilla, strawberry, and chocolate stacked together.
+  description: ent-FoodNeapolitanIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -322,10 +322,10 @@
         Quantity: 10
 
 - type: entity
-  name: salted caramel ice cream
+  name: ent-FoodSaltedCaramelIceCream
   parent: FoodIceCreamBase
   id: FoodSaltedCaramelIceCream
-  description: Vanilla with a small amount of salt and caramel glaze.
+  description: ent-FoodSaltedCaramelIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -345,10 +345,10 @@
         Quantity: 15
 
 - type: entity
-  name: rocky road ice cream
+  name: ent-FoodRockyRoadIceCream
   parent: FoodIceCreamBase
   id: FoodRockyRoadIceCream
-  description: Chocolate ice cream with marshmallows and almonds.
+  description: ent-FoodRockyRoadIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -370,10 +370,10 @@
         Quantity: 10
 
 - type: entity
-  name: matcha ice cream
+  name: ent-FoodMatchaIceCream
   parent: FoodIceCreamBase
   id: FoodMatchaIceCream
-  description: Earthy ice cream infused with matcha powder.
+  description: ent-FoodMatchaIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -395,10 +395,10 @@
         Quantity: 5
 
 - type: entity
-  name: pistachio ice cream
+  name: ent-FoodPistachioIceCream
   parent: FoodIceCreamBase
   id: FoodPistachioIceCream
-  description: Ice cream infused with pistachios.
+  description: ent-FoodPistachioIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -418,10 +418,10 @@
         Quantity: 15
 
 - type: entity
-  name: peanut butter ice cream
+  name: ent-FoodPeanutButterIceCream
   parent: FoodIceCreamBase
   id: FoodPeanutButterIceCream
-  description: Peanut butter and ice cream together to raise your calories
+  description: ent-FoodPeanutButterIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -441,10 +441,10 @@
         Quantity: 15
 
 - type: entity
-  name: cherry ice cream
+  name: ent-FoodCherryIceCream
   parent: FoodIceCreamBase
   id: FoodCherryIceCream
-  description: Rich cherry ice cream.
+  description: ent-FoodCherryIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -464,10 +464,10 @@
         Quantity: 15
 
 - type: entity
-  name: apple cinnamon ice cream
+  name: ent-FoodAppleCinnamonIceCream
   parent: FoodIceCreamBase
   id: FoodAppleCinnamonIceCream
-  description: Vanilla ice cream with apple slices and cinnamon toppings.
+  description: ent-FoodAppleCinnamonIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -487,10 +487,10 @@
         Quantity: 15
 
 - type: entity
-  name: gold apple cinnamon ice cream
+  name: ent-FoodGoldAppleCinnamonIceCream
   parent: FoodIceCreamBase
   id: FoodGoldAppleCinnamonIceCream
-  description: Ice cream that radiates health.
+  description: ent-FoodGoldAppleCinnamonIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -510,10 +510,10 @@
         Quantity: 13
 
 - type: entity
-  name: holy melon ice cream
+  name: ent-FoodHolyMelonIceCream
   parent: FoodIceCreamBase
   id: FoodHolyMelonIceCream
-  description: Holy Melon Sorbet that cleanses your soul.
+  description: ent-FoodHolyMelonIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -533,10 +533,10 @@
         Quantity: 15
 
 - type: entity
-  name: rainbow high ice cream
+  name: ent-FoodRainbowHighIceCream
   parent: FoodIceCreamBase
   id: FoodRainbowHighIceCream
-  description: This ice cream is way out there...
+  description: ent-FoodRainbowHighIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -558,10 +558,10 @@
         Quantity: 6
 
 - type: entity
-  name: meat ice cream
+  name: ent-FoodMeatIceCream
   parent: FoodIceCreamBase
   id: FoodMeatIceCream
-  description: A raw T-bone steak with ice cream on it.
+  description: ent-FoodMeatIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -581,10 +581,10 @@
         Quantity: 15
 
 - type: entity
-  name: weh ice cream
+  name: ent-FoodWehIceCream
   parent: FoodIceCreamBase
   id: FoodWehIceCream
-  description: Lime ice cream in the shape of a beloved plush.
+  description: ent-FoodWehIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -606,10 +606,10 @@
         Quantity: 5
 
 - type: entity
-  name: space dragon ice cream
+  name: ent-FoodSpaceDragonIceCream
   parent: FoodIceCreamBase
   id: FoodSpaceDragonIceCream
-  description: Blueberry ice cream with... space dragon meat in it.
+  description: ent-FoodSpaceDragonIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -631,10 +631,10 @@
         Quantity: 10
 
 - type: entity
-  name: silk thread ice cream
+  name: ent-FoodMothSilkIceCream
   parent: FoodIceCreamBase
   id: FoodMothSilkIceCream
-  description: Silk threads flavored like vanilla ice cream for moths.
+  description: ent-FoodMothSilkIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -656,10 +656,10 @@
         Quantity: 5
 
 - type: entity
-  name: interdimensional napoleon ice cream
+  name: ent-FoodDimensionalIceCream
   parent: FoodIceCreamBase
   id: FoodDimensionalIceCream
-  description: An ice cream that will make you feel different dimensions.
+  description: ent-FoodDimensionalIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -681,10 +681,10 @@
         Quantity: 6
 
 - type: entity
-  name: omnizine ice cream
+  name: ent-FoodOmnizineIceCream
   parent: FoodIceCreamBase
   id: FoodOmnizineIceCream
-  description: An incredibly soothing ice cream that mends your wounds.
+  description: ent-FoodOmnizineIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -706,10 +706,10 @@
         Quantity: 8
 
 - type: entity
-  name: mean girl ice cream
+  name: ent-FoodMeanGirlIceCream
   parent: FoodIceCreamBase
   id: FoodMeanGirlIceCream
-  description: The power of mean girls shines in this ice cream.
+  description: ent-FoodMeanGirlIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -729,10 +729,10 @@
         Quantity: 15
 
 - type: entity
-  name: hew ice cream
+  name: ent-FoodHewIceCream
   parent: FoodIceCreamBase
   id: FoodHewIceCream
-  description: Blueberry ice cream in the shape of a lovable inverted weh.
+  description: ent-FoodHewIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -754,10 +754,10 @@
         Quantity: 5
 
 - type: entity
-  name: fluffy boy ice cream
+  name: ent-FoodFluffyBoyIceCream
   parent: FoodIceCreamBase
   id: FoodFluffyBoyIceCream
-  description: The power of fluffy boys shines in this ice cream.
+  description: ent-FoodFluffyBoyIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -777,10 +777,10 @@
         Quantity: 15
 
 - type: entity
-  name: leader ice cream
+  name: ent-FoodLeaderIceCream
   parent: FoodIceCreamBase
   id: FoodLeaderIceCream
-  description: The power of this ice cream shines with you.
+  description: ent-FoodLeaderIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -800,10 +800,10 @@
         Quantity: 15
 
 - type: entity
-  name: tesla ice cream
+  name: ent-FoodTeslaIceCream
   parent: FoodIceCreamBase
   id: FoodTeslaIceCream
-  description: Ice cream to give you a good zap in your step!
+  description: ent-FoodTeslaIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -825,10 +825,10 @@
         Quantity: 5
 
 - type: entity
-  name: banana ice cream
+  name: ent-FoodBananaIceCream
   parent: FoodIceCreamBase
   id: FoodBananaIceCream
-  description: Banana infused ice cream to make you go nanners.
+  description: ent-FoodBananaIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -848,10 +848,10 @@
         Quantity: 15
 
 - type: entity
-  name: clown ice cream
+  name: ent-FoodClownIceCream
   parent: FoodIceCreamBase
   id: FoodClownIceCream
-  description: Mischievous ice cream in the shape of the station clown. Honks included.
+  description: ent-FoodClownIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -873,10 +873,10 @@
         Quantity: 3
 
 - type: entity
-  name: coconut ice cream
+  name: ent-FoodCoconutIceCream
   parent: FoodIceCreamBase
   id: FoodCoconutIceCream
-  description: Coconut and ice cream mixed in a simple refreshing combo.
+  description: ent-FoodCoconutIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -898,10 +898,10 @@
         Quantity: 5
 
 - type: entity
-  name: ian ice cream
+  name: ent-FoodIanIceCream
   parent: FoodIceCreamBase
   id: FoodIanIceCream
-  description: Orange and vanilla ice cream in the shape of beloved Ian.
+  description: ent-FoodIanIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -921,10 +921,10 @@
         Quantity: 15
 
 - type: entity
-  name: nanotrasen ice cream
+  name: ent-FoodNTIceCream
   parent: FoodIceCreamBase
   id: FoodNTIceCream
-  description: Rich blueberry and marshmallows to showcase your favorite space employer!
+  description: ent-FoodNTIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -944,10 +944,10 @@
         Quantity: 15
 
 - type: entity
-  name: nanotrasen marine ice cream
+  name: ent-FoodNTMarineIceCream
   parent: FoodIceCreamBase
   id: FoodNTMarineIceCream
-  description: Sponsored blueberry and lime ice cream to enlist your taste buds.
+  description: ent-FoodNTMarineIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -967,10 +967,10 @@
         Quantity: 15
 
 - type: entity
-  name: pineapple ice cream
+  name: ent-FoodPineappleIceCream
   parent: FoodIceCreamBase
   id: FoodPineappleIceCream
-  description: A cup of tropical pineapple ice cream not under the sea.
+  description: ent-FoodPineappleIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -990,10 +990,10 @@
         Quantity: 15
 
 - type: entity
-  name: rising sun ice cream
+  name: ent-FoodRisingSunIceCream
   parent: FoodIceCreamBase
   id: FoodRisingSunIceCream
-  description: Raspberry, orange, and lemon mixed together to make the ultimate tart ice cream.
+  description: ent-FoodRisingSunIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -1013,10 +1013,10 @@
         Quantity: 15
 
 - type: entity
-  name: rocky ore ice cream
+  name: ent-FoodRockyOreIceCream
   parent: FoodIceCreamBase
   id: FoodRockyOreIceCream
-  description: Mining's favorite cherry ice cream with plenty of ore shaped cookies to dig into.
+  description: ent-FoodRockyOreIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -1036,10 +1036,10 @@
         Quantity: 15
 
 - type: entity
-  name: stun baton ice cream
+  name: ent-FoodStunBatonIceCream
   parent: FoodIceCreamBase
   id: FoodStunBatonIceCream
-  description: An orange ice cream fashioned in the shape of a stun baton. Now you can harm baton with ice cream!
+  description: ent-FoodStunBatonIceCream-desc
   components:
   - type: MeleeWeapon
     damage:
@@ -1066,10 +1066,10 @@
         Quantity: 15
 
 - type: entity
-  name: syndie-land ice cream
+  name: ent-FoodSyndieLandIceCream
   parent: FoodIceCreamBase
   id: FoodSyndieLandIceCream
-  description: Cherry and lime ice cream in the shape of your favorite pod war protagonists.
+  description: ent-FoodSyndieLandIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -1089,10 +1089,10 @@
         Quantity: 15
 
 - type: entity
-  name: tiramisu ice cream
+  name: ent-FoodTiramisuIceCream
   parent: FoodIceCreamBase
   id: FoodTiramisuIceCream
-  description: Coffee, chocolate, and cinnamon in an ice cream without the blow torch.
+  description: ent-FoodTiramisuIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -1114,10 +1114,10 @@
         Quantity: 5
 
 - type: entity
-  name: uranium ice cream
+  name: ent-FoodUraniumIceCream
   parent: FoodIceCreamBase
   id: FoodUraniumIceCream
-  description: Geiger counter not included for this radioactive ice cream.
+  description: ent-FoodUraniumIceCream-desc
   components:
   - type: FlavorProfile
     flavors:
@@ -1139,10 +1139,10 @@
         Quantity: 5
 
 - type: entity
-  name: vox ice cream
+  name: ent-FoodVoxIceCream
   parent: FoodIceCreamBase
   id: FoodVoxIceCream
-  description: A cold treat for a bit larger than other birds. It smells a bit odd, but give it to a Vox and they'll be glad to give it a bite or two... or all of it.
+  description: ent-FoodVoxIceCream-desc
   components:
   - type: FlavorProfile
     flavors:

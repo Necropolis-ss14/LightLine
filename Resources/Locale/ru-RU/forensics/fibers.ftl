@@ -28,3 +28,6 @@ fibers-regal-blue = королевские синие
 fibers-olive = оливковые
 fibers-silver = серебряные
 fibers-gold = золотые
+
+fibers-black-nitrile = чёрный нитрил
+fibers-red-and-black-woven = красно-чёрная ткань

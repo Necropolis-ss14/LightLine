@@ -54,3 +54,7 @@ comp-pda-ui-unassigned = Не назначено
 
 pda-notification-message = [font size=12][bold]КПК[/bold] { $header }: [/font]
     "{ $message }"
+comp-pda-ui-start-time = Длительность смены: [color=white]{ $time }[/color]
+comp-pda-ui-shuttle-launch-time = До запуска шаттла: [color=white]{ $time }[/color]
+comp-pda-ui-shuttle-arrival-time = До прибытия шаттла: [color=white]{ $time }[/color]
+comp-pda-ui-shuttle-call-time = До смены экипажа: [color=white]{ $time }[/color]

@@ -31,3 +31,5 @@ gas-entry-info = { $gasName }: { $gasAmount } моль
 gas-analyzer-window-text-inlet = Вход
 gas-analyzer-window-text-outlet = Выход
 gas-analyzer-window-text-filter = Фильтр
+
+gas-analyzer-window-error-text = Ошибка: {$errorText}

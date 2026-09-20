@@ -27,3 +27,12 @@ command-spawnartifactwithnode-spawn-artifact-structure-hint = использов
 command-spawnartifactwithnode-spawn-artifact-type-hint = <artifact entity proto id>
 
 command-xenoartifact-common-node-hint = глубина {$depth} узел {$nodeId} стимулятор {$nodeDetail}
+
+command-description-xenoartifact-printMatrix =
+    Выводит матрицу, отображающую все рёбра между узлами.
+command-description-xenoartifact-totalResearch =
+    Получает все очки исследований, которые в данный момент можно извлечь из артефакта.
+command-description-xenoartifact-averageResearch =
+    Вычисляет количество очков исследований, которое в среднем сгенерирует ксено-артефакт при полной активации.
+command-description-xenoartifact-unlockAllNodes =
+    Разблокирует все узлы артефакта.

@@ -77,3 +77,6 @@ humanoid-profile-editor-voice-masculine = Мужественный
 humanoid-profile-editor-voice-feminine = Женственный
 humanoid-profile-editor-voice-neutral = Нейтральный
 humanoid-profile-editor-voice-none = Безымянный голос
+humanoid-profile-editor-randomize-everything-button = Случайно всё
+humanoid-profile-editor-name-random-button = Случайно
+humanoid-profile-editor-cybernetics-tab = Кибернетика

@@ -178,3 +178,5 @@ chat-speech-verb-wawa-1 = произносит
 chat-speech-verb-wawa-2 = заявляет
 chat-speech-verb-wawa-3 = объявляет
 chat-speech-verb-wawa-4 = размышляет
+
+chat-speech-verb-canine-4 = тявкает

@@ -350,3 +350,10 @@ ghost-role-information-wizard-desc = ТЫ ВОЛШЕБНИК! Покажи ст�
 
 ghost-role-information-emotional-support-scurret-name = Слизенёк эмоциональной поддержки
 ghost-role-information-emotional-support-scurret-description = Поддерживайте экипаж, будьте очаровательными, часто говорите "ва".
+
+ghost-role-information-cluwnebeast-name = Зверь-клавн
+ghost-role-information-cluwnebeast-description = Прячьтесь в тенях, нападайте на всё, что движется, и превращайте экипаж в клавнов.
+ghost-role-information-cluwnebeast-rules = Вы антагонист, выслеживайте добычу и превращайте экипаж в дружелюбных клавнов!
+ghost-role-information-syndicate-cyborg-medical-name = Медицинский киборг Синдиката
+ghost-role-information-xenoroach-name = Ксенотаракан
+ghost-role-information-xenoroach-description = Крошечный биомеханический шпионский бот, развёрнутый материнским кораблём ксеноборгов. Ползайте по вентиляции, проскальзывайте под двери и передавайте увиденное обратно Ядру Материнского корабля. Вы хрупки — ваше главное оружие это малый размер.

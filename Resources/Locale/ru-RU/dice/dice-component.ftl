@@ -8,3 +8,5 @@ dice-component-roll-specific = Приземлилось на [color=white]{ $cur
 
 dice-component-coin-value-1 = орёл
 dice-component-coin-value-2 = решка
+
+dice-component-on-examine-message-part-2 = Он упал на [color=white]{$currentSide}[/color].

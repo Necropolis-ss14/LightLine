@@ -18,3 +18,4 @@ emitter-destroyed-broadcast = Включенный эмиттер { $location } 
 emitter-unlocked-broadcast = Включенный эмиттер  { $location } разблокирован.
 emitter-unpowered-broadcast = Включенный эмиттер  { $location } потерял питание.
 emitter-turn-off-broadcast = Включенный эмиттер {$location} был выключен.
+emitter-deconstructed-broadcast = Запитанный {$location} был разобран.

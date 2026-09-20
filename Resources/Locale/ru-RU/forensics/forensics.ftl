@@ -29,3 +29,5 @@ forensics-cleaning-user = Вы начинаете счищать улики с {
 forensics-cleaning-others = { CAPITALIZE($user) } начинает счищать улики с { THE($target) }.
 
 forensics-cleaning-cannot-clean = Ничего нельзя счистить с { $target }!
+
+forensics-cleaning = Вы начинаете стирать улики с {THE($target)}...

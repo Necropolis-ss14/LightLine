@@ -15,3 +15,8 @@ mech-slot-display = Доступно слотов: { $amount }
 
 mech-construction-guide-string = Все механические детали должны быть прикреплены к каркасу.
 mech-construction-guide-string-vim = ВКД шлем и две ноги киборга должны быть прикреплены к каркасу.
+
+mech-verb-enter = Залезть
+mech-verb-exit = Извлечь пилота
+mech-no-enter = Вы не можете пилотировать это.
+mech-eject-pilot-alert = {$user} вытаскивает пилота из {$item}!

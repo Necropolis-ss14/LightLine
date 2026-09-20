@@ -36,3 +36,7 @@ role-subtype-wizard = Волшебник
 role-subtype-xenoborg = Ксеноборг
 role-subtype-xenoborg-core = Ядро ксеноборгов
 role-subtype-changeling = Генокрад
+
+role-subtype-vampire = Вампир
+role-subtype-thrall = Тралл
+role-subtype-ratking = Крысиный король

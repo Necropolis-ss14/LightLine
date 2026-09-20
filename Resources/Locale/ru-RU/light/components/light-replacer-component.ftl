@@ -48,3 +48,6 @@ comp-light-bulb-orange = оранжевая
 comp-light-bulb-black = чёрная
 comp-light-bulb-red = красная
 comp-light-bulb-green = зелёная
+
+comp-light-replacer-insert-light = Вы вставляете {$bulb} в {THE($light-replacer)}.
+comp-light-replacer-refill-from-storage = Вы пополняете {THE($light-replacer)}.

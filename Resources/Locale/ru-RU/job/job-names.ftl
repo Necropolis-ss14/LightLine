@@ -126,3 +126,6 @@ JobStationEngineer = инженер
 JobTechnicalAssistant = технический ассистент
 JobVisitor = посетитель
 JobWarden = смотритель
+
+JobAssistant = Ассистент
+JobCentralCommandOperator = Оператор ЦентКом

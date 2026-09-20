@@ -600,3 +600,20 @@ entity-effect-disarm =
         [1] Обезоруживает
         *[other] обезоружить
     } цель
+
+entity-effect-guidebook-satiate-thirst =
+    { $chance ->
+        [1] Утоляет
+        *[other] утоляет
+    } { $relative ->
+        [1] жажду средне
+        *[other] жажду со скоростью { NATURALFIXED($relative, 3) }x от средней
+    }
+entity-effect-guidebook-satiate-hunger =
+    { $chance ->
+        [1] Утоляет
+        *[other] утоляет
+    } { $relative ->
+        [1] голод средне
+        *[other] голод со скоростью { NATURALFIXED($relative, 3) }x от средней
+    }

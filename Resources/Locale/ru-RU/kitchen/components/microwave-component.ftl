@@ -24,3 +24,6 @@ microwave-menu-eject-all-tooltip = Это испарит все жидкости
 microwave-menu-instant-button = МГНОВЕННО
 microwave-menu-footer-flavor-left = Не помещайте сюда электронные, металлические или живые объекты.
 microwave-menu-footer-flavor-right = v1.5
+
+microwave-bound-user-interface-current-cook-time-label = ТЕКУЩЕЕ ВРЕМЯ ГОТОВКИ: {$time}
+microwave-menu-stop-button = Стоп

@@ -132,3 +132,9 @@ names-ai-dataset-100 = Улисс
 names-ai-dataset-101 = В1к1
 names-ai-dataset-102 = ИКС-5
 names-ai-dataset-103 = К.С.А.Н.А.
+
+names-ai-dataset-104 = КСЕРКС
+names-ai-dataset-105 = З-1
+names-ai-dataset-106 = З-2
+names-ai-dataset-107 = З-3
+names-ai-dataset-108 = Зед

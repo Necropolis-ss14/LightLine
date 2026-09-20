@@ -110,3 +110,5 @@ petting-failure-tesla = Вы тянетесь погладить { $target }, н
 
 petting-success-mail-teleporter = Вы гладите { $target } по { POSS-ADJ($target) } послушной, холодной обшивке.
 petting-failure-mail-teleporter = Вы тянетесь погладить { $target }, но { SUBJECT($target) } занимается сортировкой почты!
+
+plushie-large-soft-shark-cuddle = { CAPITALIZE(THE($user)) } обнимает большую синюю акулу.

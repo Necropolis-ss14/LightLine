@@ -357,3 +357,7 @@ reagent-desc-zombiecocktail = It gets in your head. Your he-eyeh-ead.
 
 reagent-name-bacchus-blessing = благословение бахуса
 reagent-desc-bacchus-blessing = Вы не думали, что жидкость может быть настолько отвратительной. Вы уверены в этом?...
+reagent-name-irish-car-bomb = ирландская машинная бомба
+reagent-desc-irish-car-bomb = Что чёрно-белое и красное повсюду?
+reagent-name-neurotoxin = нейротоксин
+reagent-desc-neurotoxin = Сильный нейротоксин, вводящий жертву в состояние, подобное смерти.

@@ -32,3 +32,6 @@ store-category-nukie-delivery = Предложения
 store-category-combat = Боевые
 store-category-utility = Вспомогательные
 store-category-stealth = Скрытные
+store-second-hand-items = Секонд-хенд
+store-caregory-spellbook-war = Война
+store-category-languages = Языки

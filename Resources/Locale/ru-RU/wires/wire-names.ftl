@@ -73,3 +73,5 @@ wire-name-bomb-bolt = БОЛТ
 wire-name-speech = ДНМК
 wire-name-listen = МИКР
 wire-name-log = ЛОГ
+wires-board-name-medibot = Медибот
+wires-board-name-cleanbot = Чистобот

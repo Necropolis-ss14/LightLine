@@ -5,3 +5,8 @@ delaystart-preround-only = Это можно выполнить только в 
 delaystart-paused = Обратный отсчет приостановлен.
 delaystart-resumed = Обратный отсчет возобновлен.
 delaystart-invalid-seconds = {$seconds} является недопустимым количеством секунд.
+
+cmd-delaystart-invalid-seconds = {$value} — недопустимое количество секунд.
+cmd-delaystart-paused = Обратный отсчёт приостановлен.
+cmd-delaystart-unpaused = Обратный отсчёт возобновлён.
+cmd-delaystart-too-late = Не удалось вовремя задержать начало раунда!

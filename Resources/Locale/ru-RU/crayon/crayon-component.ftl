@@ -15,3 +15,6 @@ crayon-category-3-symbols = Символы
 crayon-category-4-info = Знаки
 crayon-category-5-graffiti = Граффити
 crayon-category-random = Разное
+
+crayon-window-rotation = Поворот глифа
+crayon-window-preview = Показать предпросмотр

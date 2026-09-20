@@ -14,4 +14,6 @@ round-end-summary-window-player-manifest-tab-sort-player = Игрок
 round-end-summary-window-player-manifest-tab-sort-player-type-antag = Антагонист
 round-end-summary-window-player-manifest-tab-sort-player-type-crew = Экипаж
 round-end-summary-window-player-manifest-tab-sort-player-type-observer = Наблюдатель
+round-end-summary-window-search-label = Поиск:
+round-end-summary-window-search-placeholder = Фильтр по игроку...
 
