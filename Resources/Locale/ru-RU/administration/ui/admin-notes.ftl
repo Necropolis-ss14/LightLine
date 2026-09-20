@@ -89,3 +89,4 @@ admin-remarks-title = Админ замечания
 
 # Misc
 system-user = [Система]
+admin-note-editor-severity-minor = Незначительная

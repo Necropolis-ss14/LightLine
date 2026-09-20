@@ -60,3 +60,4 @@ changeling-not-enough-chemicals = У нас недостаточно химик�
 
 # other
 changeling-paused-map-name = Карта хранения личностей генокрада
+changeling-devour-consume-failed-not-dead = Это тело ещё живо! Мы не можем поглотить его живым!

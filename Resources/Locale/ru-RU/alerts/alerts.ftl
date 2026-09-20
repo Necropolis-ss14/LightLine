@@ -116,3 +116,14 @@ alerts-prying-desc = Вы можете вскрывать двери, испол
 
 alerts-changeling-chemicals-name = Химикаты
 alerts-changeling-chemicals-desc = Химикаты, хранящиеся в наших железах. Мы используем их для выполнения многих своих функций. Со временем они восстанавливаются.
+alerts-stunned-name = [color=yellow]Оглушение[/color]
+alerts-stunned-desc = Вы [color=yellow]оглушены[/color]! Что-то мешает вам двигаться и взаимодействовать с объектами.
+alerts-muted-name = Немота
+alerts-muted-desc = Вы потеряли способность говорить.
+alerts-vow-silence-name = Обет молчания
+alerts-vow-silence-desc = Вы дали обет, запрещающий устное и письменное общение, как часть посвящения в Мистико Тагма Мимон. Нажмите, чтобы нарушить обет.
+alerts-adrenaline-name = [color=red]Адреналин[/color]
+alerts-adrenaline-desc = Вы полны адреналина: боль вас не замедлит.
+alerts-changeling-biomass-name = Биомасса
+alerts-changeling-biomass-desc =
+    Это ваше здоровье. Если оно достигнет 0 — это [color=red]конец игры[/color]. Поглощайте гуманоидов, чтобы восстановить его.

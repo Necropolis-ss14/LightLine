@@ -28,3 +28,5 @@ guardian-host-death-warn = ВЫ ПЕРЕСТАЁТЕ СУЩЕСТВОВАТЬ
 guardian-death-warn = ВАШЕ ТЕЛО ПРОНЗАЕТ СУБАТОМНАЯ БОЛЬ, КОГДА ОНО РАСПАДАЕТСЯ!
 guardian-attack-host = Вы не можете атаковать своего хозяина.
 
+guardian-activator-empty-invalid-creation = Инжектор израсходован.
+guardian-activator-empty-examine = [color=#ba1919]Инжектор израсходован.[/color]

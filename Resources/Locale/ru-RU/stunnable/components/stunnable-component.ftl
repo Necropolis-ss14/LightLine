@@ -4,3 +4,5 @@ knockdown-component-pushup-failure = Вы слишком выдохлись, ч�
 knockdown-component-pushup-success = С энергичным рывком вы встаёте!
 knockdown-component-stand-no-room = Вы пытаетесь встать, но здесь недостаточно места!
 worm-component-stand-attempt = Вы пытаетесь встать, но вам не удаётся!
+knockdown-component-shoot-fail = Это оружие слишком громоздко, чтобы стрелять лёжа!
+knockdown-component-melee-fail = Это оружие слишком громоздко, чтобы использовать лёжа!

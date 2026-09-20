@@ -18,3 +18,4 @@ store-preset-name-nukie-delivery = Блюспейс доставка Ядерн�
 store-preset-name-changeling = Магазин ДНК
 
 store-listing-locked = Заблокировано
+store-ui-button-charging = {""} (Зарядка)

@@ -208,3 +208,8 @@ guide-entry-rules-ban-durations = Длительности банов
 
 guide-entry-writing = Разметка письма
 guide-entry-glossary = Словарь терминов
+guide-entry-vampires = Вампиры
+guide-entry-vampire-hemomancer = Гемомант
+guide-entry-vampire-umbrae = Умбрэ
+guide-entry-vampire-dantalion = Данталион
+guide-entry-vampire-gargantua = Гаргантюа

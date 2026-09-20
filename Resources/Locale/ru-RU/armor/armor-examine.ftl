@@ -18,3 +18,5 @@ armor-damage-type-poison = Ядовитый
 armor-damage-type-shock = Электрический
 armor-damage-type-structural = Структурный
 armor-damage-type-holy = Святой
+armor-stamina-value = - урон [color=blue]{$type}[/color] снижен на [color=lightblue]{$value}%[/color].
+armor-damage-type-stamina = Выносливость

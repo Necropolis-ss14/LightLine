@@ -16,3 +16,4 @@ admin-player-actions-clone-message = Создать копию этого пер
 admin-player-actions-follow = Следовать
 admin-player-actions-check-afk = Проверить АФК
 admin-player-actions-confirm = Вы уверены?
+admin-player-actions-bans = Список банов

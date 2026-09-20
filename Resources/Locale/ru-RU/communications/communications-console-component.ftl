@@ -50,3 +50,9 @@ comms-console-level-Epsilon-flavour-label = Контракты расторгн�
 
 #CorvaxFix There no Delta code in Ban-Sing-Se
 comms-console-level-DeltaNuke-flavour-label = Удачи :)
+comms-console-menu-call-shuttle = Вызвать эвакуационный шаттл
+comms-console-menu-recall-shuttle = Отозвать эвакуационный шаттл
+comms-console-menu-emergency-shuttle-button-tooltip = Вызывает или отзывает эвакуационный шаттл. Отозвать можно только когда осталось достаточно времени.
+comms-console-menu-time-remaining = Оставшееся время: {$time}
+comms-console-menu-secure-terminal-button = Защищённый терминал
+comms-console-menu-secure-terminal-button-tooltip = Открывает защищённый терминал.

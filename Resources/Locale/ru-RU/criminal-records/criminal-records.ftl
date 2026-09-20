@@ -62,3 +62,8 @@ criminal-records-species-filter = Вид
 ## Arrest auto history lines
 criminal-records-console-auto-history = АРЕСТОВАН: { $reason }
 criminal-records-console-unspecified-reason = <причина не указана>
+criminal-records-status-arrestonsight = Арестовать на месте
+criminal-records-console-status-history = { $status }
+criminal-records-console-status-history-reason = { $status }: { $reason }
+criminal-records-console-aos = {$name} ({$job}) был отмечен для ареста на месте офицером {$officer} по причине: {$reason}.
+criminal-records-console-not-aos = {$name} ({$job}) больше не отмечен для ареста на месте офицером {$officer}.

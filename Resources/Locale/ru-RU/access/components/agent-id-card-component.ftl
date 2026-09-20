@@ -19,3 +19,7 @@ agent-id-ui-os-flavor = Когда возникают сомнения, никт
 # Get your mind out of the gutter.
 agent-id-ui-footer-flavor-left = Просто обычная ID карта, тут не на что смотреть
 agent-id-ui-footer-flavor-right = v2.0
+agent-id-card-current-name = Имя:
+agent-id-card-current-job = Должность:
+agent-id-card-job-icon-label = Значок должности:
+agent-id-menu-title = Карта агента

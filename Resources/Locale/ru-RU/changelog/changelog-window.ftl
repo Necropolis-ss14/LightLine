@@ -18,3 +18,4 @@ changelog-tab-title-Rules = Правила
 
 cmd-changelog-desc = Открыть историю обновлений.
 cmd-changelog-help = Использование: changelog
+changelog-tab-title-ChangelogStarlight = STARLIGHT Список изменений

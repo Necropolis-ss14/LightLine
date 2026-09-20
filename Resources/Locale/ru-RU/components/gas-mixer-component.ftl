@@ -7,3 +7,4 @@ comp-gas-mixer-ui-mixer-set = Установить
 comp-gas-mixer-ui-mixer-max = Максимум
 
 comp-gas-mixer-ratio-examine = Соотношение вторичного порта [color={ $statusColor }]{ $sidePortRatio }[/color].
+comp-gas-mixer-ui-needs-anchor = Сначала закрепите его!

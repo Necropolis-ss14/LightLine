@@ -49,3 +49,4 @@ roles-antag-mothership-core-objective = Используйте своих ксе
 
 roles-antag-xenoborg-name = Ксеноборг
 roles-antag-xenoborg-objective = Помогите материнскому кораблю создать больше ксеноборгов.
+roles-antag-changeling-description = Используйте способности к смене облика для выполнения целей.

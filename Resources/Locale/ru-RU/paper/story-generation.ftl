@@ -242,3 +242,12 @@ story-gen-book-element-trait13 = вызывает депрессию
 
 
 
+story-gen-book-character41 = эльф
+story-gen-book-character42 = гоблин
+story-gen-book-character43 = орк
+story-gen-book-character44 = АВД
+story-gen-book-character45 = шейдкин
+story-gen-book-character46 = авали
+story-gen-book-character47 = резоми
+story-gen-book-character48 = тейвен
+

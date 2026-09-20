@@ -157,3 +157,19 @@ construction-graph-tag-backpack = рюкзак
 
 # chemistry
 construction-graph-tag-centrifuge-compatible = пробирка
+construction-graph-tag-exosuit-air-tank = баллон экзокостюма
+construction-graph-tag-exosuit-thruster = двигатель экзокостюма
+construction-graph-tag-exosuit-upgrade-kit = Комплект улучшения экзокостюма
+construction-graph-tag-paddy-conversion-kit = Комплект переоборудования Пэдди
+construction-graph-tag-gygax-central-control = центральный модуль управления Гигакса
+construction-graph-tag-gygax-peripherals-control = модуль управления периферией Гигакса
+construction-graph-tag-gygax-weapon-targeting = модуль управления оружием и наведения Гигакса
+construction-graph-tag-gygax-armor-plates = бронепластины Гигакса
+construction-graph-tag-durand-central-control = центральный модуль управления Дюранда
+construction-graph-tag-durand-peripherals-control = модуль управления периферией Дюранда
+construction-graph-tag-durand-weapon-targeting = модуль управления оружием и наведения Дюранда
+construction-graph-tag-durand-armor-plates = бронепластины Дюранда
+construction-graph-tag-clarke-central-control = центральный модуль управления Кларка
+construction-graph-tag-clarke-peripherals-control = модуль управления периферией Кларка
+construction-graph-tag-ripley-central-control = центральный модуль управления Рипли
+construction-graph-tag-ripley-peripherals-control = модуль управления периферией Рипли

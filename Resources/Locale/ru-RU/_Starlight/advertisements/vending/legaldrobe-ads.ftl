@@ -1,0 +1,9 @@
+advertisement-legaldrobe-1 = ДЕРЖИТЕ! Возьмите верховенство закона себе!
+advertisement-legaldrobe-2 = Доставайте службу безопасности, пока они не подчинятся вашим правилам!
+advertisement-legaldrobe-3 = Новое дело поступило? Идите вытаскивайте их из тюрьмы!
+advertisement-legaldrobe-4 = Я хотел бы вызвать попугая на трибуну!
+advertisement-legaldrobe-5 = Доставайте смотрителя бесконечными дебатами о сделке с правосудием.
+advertisement-legaldrobe-6 = Уладьте любой спор, каким бы мелким он ни был!
+advertisement-legaldrobe-7 = Мы не продаём Магатамы.
+advertisement-legaldrobe-8 = Вы или ваш близкий пострадали от НаноТрейзен? Зовите юриста!
+advertisement-legaldrobe-9 = Новое судебное заседание началось!

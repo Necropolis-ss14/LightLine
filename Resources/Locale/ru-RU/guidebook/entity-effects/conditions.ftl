@@ -92,3 +92,11 @@ entity-condition-guidebook-internals =
         [true] использует балон
         *[false] дышит атмосферой
     }
+entity-condition-guidebook-total-hunger =
+    { $max ->
+        [2147483648] у цели не менее { NATURALFIXED($min, 2) } общего голода
+        *[other] { $min ->
+                    [0] у цели не более { NATURALFIXED($max, 2) } общего голода
+                    *[other] у цели от { NATURALFIXED($min, 2) } до { NATURALFIXED($max, 2) } общего голода
+                 }
+    }

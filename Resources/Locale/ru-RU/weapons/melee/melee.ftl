@@ -11,3 +11,4 @@ examine-battery-hits-left = Заряда хватит на [color={ $color }]{ $
     [few] удара
     *[other] ударов
 }.
+melee-battery-examine = Заряда хватит на [color={$color}]{$count}[/color] ударов.

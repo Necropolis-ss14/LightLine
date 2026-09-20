@@ -52,3 +52,4 @@ preset-no-one-ready = Не удалось запустить режим { $prese
 game-run-level-PreRoundLobby = Предраундовое лобби
 game-run-level-InRound = В раунде
 game-run-level-PostRound = После раунда
+game-ticker-player-no-character-for-job-available-when-joining = При попытке присоединиться к игре не нашлось персонажей, доступных для выбранной должности {$job}.
