@@ -1,4 +1,5 @@
-character-info-title = Персонаж
-character-info-roles-antagonist-text = Роли антагонистов
-character-info-objectives-label = Цели
-character-info-no-profession = Нет должности
+character-info-title = Character
+character-info-roles-antagonist-text = You have no special Roles
+character-info-objectives-label = Objectives
+character-info-minds-label = Collective Minds
+character-info-no-profession = No Profession

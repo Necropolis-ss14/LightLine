@@ -1,6 +1,4 @@
-cmd-showhealthbars-desc = Переключает полоски здоровья над мобами.
-cmd-showhealthbars-help = Использование: { $command } [<DamageContainerId>]
-cmd-showhealthbars-error-not-player = Вы не игрок.
-cmd-showhealthbars-error-no-entity = У вас нет прикрепленной сущности.
-cmd-showhealthbars-notify-enabled = Включено отображение здоровья для контейнеров повреждений: { $args }.
-cmd-showhealthbars-notify-disabled = Отключено отображение здоровья.
+cmd-showhealthbars-desc = Toggles health bars above mobs.
+cmd-showhealthbars-help = Usage: showhealthbars [<DamageContainerId>]
+cmd-showhealthbars-notify-enabled = Enabled health overlay for DamageContainers: {$args}.
+cmd-showhealthbars-notify-disabled = Disabled health overlay.

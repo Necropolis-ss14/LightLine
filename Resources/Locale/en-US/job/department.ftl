@@ -1,12 +1,12 @@
-department-Logistics = Отдел снабжения
-department-Civilian = Сервисный отдел
-department-Command = Командование
-department-CentralCommand = Центральное командование
-department-Engineering = Инженерный отдел
-department-Medical = Медицинский отдел
-department-Security = Служба безопасности
-department-Epistemics = Научный отдел
-department-Silicon = Синтетики
-department-Specific = На определённых станциях
-department-Dignitary = Представительство
-department-Justice = Юридический отдел
+department-Cargo = Cargo
+department-Civilian = Civilian
+department-Command = Command
+department-CentralCommand = Central Command
+department-Engineering = Engineering
+department-Medical = Medical
+department-Security = Security
+department-Science = Science
+department-Silicon = Silicon
+department-Specific = Station specific
+
+department-Unknown = Unknown
