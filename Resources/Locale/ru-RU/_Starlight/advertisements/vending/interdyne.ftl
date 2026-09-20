@@ -1,0 +1,9 @@
+advertisement-interdyne-1 = Идите спасать жизни!
+advertisement-interdyne-2 = Лучшее для вашего травмпункта.
+advertisement-interdyne-3 = Только острейшие инструменты.
+advertisement-interdyne-4 = Натуральные травы!
+advertisement-interdyne-5 = Эта штука убивает!
+advertisement-interdyne-6 = Разве вы не хотите ещё?
+advertisement-interdyne-7 = Понг!
+advertisement-interdyne-8 = Следите, чтобы не передозировать людей!
+advertisement-interdyne-9 = Идите передозируйте людей!

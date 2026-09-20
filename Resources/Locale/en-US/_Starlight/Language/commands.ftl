@@ -6,8 +6,8 @@ command-language-select-desc = Select the currently spoken language of your enti
 command-language-select-help = Usage: {$command} <language id>. Example: {$command} 1. Example: {$command} GalacticCommon
 command-language-spoken = Spoken:
 command-language-understood = Understood:
-command-language-current-entry = {$id}. {$language} - {$name} (current)
-command-language-entry = {$id}. {$language} - {$name}
+command-language-current-entry = {$id}. Язык - {$name} (current)
+command-language-entry = {$id}. Язык - {$name}
 command-language-invalid-number = The language number must be between 0 and {$total}. Alternatively, use the language name.
 command-language-invalid-language = The language {$id} does not exist or you cannot speak it.
 # Toolshed

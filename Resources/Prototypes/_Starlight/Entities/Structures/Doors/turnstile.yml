@@ -8,7 +8,7 @@
     accessGroups:
     - Command
   - type: AccessReader
-    access: [["Command"]]
+    access: [["Command"], ["NTPersonnel"]]
 
 - type: entity
   id: TurnstileCommand
@@ -79,7 +79,7 @@
 - type: entity
   id: TurnstileCentComm
   parent: Turnstile
-  name: central command turnstile
+  name: ent-TurnstileCentComm
   components:
     - type: Sprite
       sprite: _Starlight/Structures/Doors/cc-turnstile.rsi
@@ -100,7 +100,7 @@
 - type: entity
   id: TurnstileCentCommCommand
   parent: TurnstileCentComm
-  name: central command turnstile
+  name: ent-TurnstileCentCommCommand
   suffix: Command
   components:
   - type: ContainerFill
