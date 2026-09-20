@@ -1,6 +1,7 @@
 zone-hallway = Коридор
 zone-maintenance = Техтоннели
 zone-command = Командование
+zone-nanotrasen = НаноТрейзен
 zone-security = Безопасность
 zone-medical = Медицина
 zone-engineering = Инженерия

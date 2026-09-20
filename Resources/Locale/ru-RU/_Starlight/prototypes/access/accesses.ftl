@@ -2,6 +2,7 @@
 id-card-access-level-debrief = Разбор полётов
 
 # NT
+id-card-access-level-ntpersonnel = Персонал НТ
 id-card-access-level-magistrate = Магистрат
 id-card-access-level-ntrep = Представитель НаноТрейзен
 id-card-access-level-blueshield = Синий Щит

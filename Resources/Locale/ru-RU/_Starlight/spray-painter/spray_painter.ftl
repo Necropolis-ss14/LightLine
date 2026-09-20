@@ -9,6 +9,7 @@ spray-painter-style-airlockstandard-brigmedic = Бригмедик
 spray-painter-style-airlockstandard-mail = Почта
 spray-painter-style-airlockstandard-retromining = Ретро-добыча
 spray-painter-style-airlockstandard-retrosalvage = Ретро-утилизация
+spray-painter-style-airlockstandard-nanotrasen = НаноТрейзен
 
 # Glass Airlocks
 spray-painter-style-airlockglass-robotics = Робототехника
@@ -21,6 +22,7 @@ spray-painter-style-airlockglass-retrosalvage = Ретро-утилизация
 spray-painter-style-airlockglass-retromining = Ретро-добыча
 spray-painter-style-airlockglass-brigmedic = Бригмедик
 spray-painter-style-airlockglass-mail = Почта
+spray-painter-style-airlockglass-nanotrasen = НаноТрейзен
 
 # Lockers
 spray-painter-style-locker-magistrate = Магистрат
