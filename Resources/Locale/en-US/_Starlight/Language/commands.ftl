@@ -7,7 +7,7 @@ command-language-select-help = Usage: {$command} <language id>. Example: {$comma
 command-language-spoken = Spoken:
 command-language-understood = Understood:
 command-language-current-entry = {$id}. Язык - {$name} (current)
-command-language-entry = {$id}. Язык} - {$name}
+command-language-entry = {$id}. Язык - {$name}
 command-language-invalid-number = The language number must be between 0 and {$total}. Alternatively, use the language name.
 command-language-invalid-language = The language {$id} does not exist or you cannot speak it.
 # Toolshed

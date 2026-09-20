@@ -11,11 +11,7 @@ ui-options-disable-job-icon-animation = Отключить анимацию ик
 
 ## TTS
 
-ui-options-tts-label = Синтез речи
-ui-options-tts-volume = Громкость СР:
 ui-options-tts-chime-volume = Громкость сигнала:
-credits-window-tts-title = СР (синтез речи)
-
 ui-options-tts-radio-volume = Громкость рации:
 ui-options-tts-announce-volume = Громкость объявлений:
 
