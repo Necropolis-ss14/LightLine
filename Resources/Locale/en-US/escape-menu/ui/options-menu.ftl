@@ -41,6 +41,10 @@ ui-options-admin-sounds = Воспроизводить звуки админис
 ui-options-bwoink-sound = Воспроизводить звук уведомления AHelp
 ui-options-volume-label = Громкость
 
+ui-options-audio-device = Output device:
+ui-options-audio-device-default = Default device
+ui-options-audio-hrtf = Enable HRTF (spatial audio, requires restart)
+
 ## Graphics menu
 
 ui-options-display-label = Экран
