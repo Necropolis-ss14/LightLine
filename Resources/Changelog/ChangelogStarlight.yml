@@ -1,41 +1,6 @@
 Entries:
 - author: Cvlancer
   changes:
-  - message: (Box) Added all departmental mailboxes.
-    type: Add
-  id: 408469
-  time: '2026-09-11T06:40:10.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/6080
-- author: Cvlancer
-  changes:
-  - message: (Box) Added a k9 to security.
-    type: Add
-  id: 408470
-  time: '2026-09-11T06:40:10.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/6080
-- author: Cvlancer
-  changes:
-  - message: (Box) Added solitary confinement to gen pop.
-    type: Add
-  id: 408471
-  time: '2026-09-11T06:40:10.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/6080
-- author: Cvlancer
-  changes:
-  - message: (Box) Added some more station radios and televisions.
-    type: Add
-  id: 408472
-  time: '2026-09-11T06:40:10.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/6080
-- author: Cvlancer
-  changes:
-  - message: (Box) Added a lot of toilet paper, hand sanitizer dispensers and hand dryer.
-    type: Add
-  id: 408473
-  time: '2026-09-11T06:40:10.000000+00:00'
-  url: https://github.com/ss14Starlight/space-station-14/pull/6080
-- author: Cvlancer
-  changes:
   - message: (Box) Added mail access and mail lockers to the mailroom.
     type: Add
   id: 408474
@@ -2799,4 +2764,39 @@ Entries:
   id: 408868
   time: '2026-09-24T11:27:52.000000+00:00'
   url: https://github.com/ss14Starlight/space-station-14/pull/6274
+- author: Pickra
+  changes:
+  - message: Changelogs now know what "unknown" type means.
+    type: Tweak
+  id: 408869
+  time: '2026-09-24T18:47:54.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/6336
+- author: Johnny
+  changes:
+  - message: Changed the cost of the summon events spell to 2.
+    type: Tweak
+  id: 408870
+  time: '2026-09-25T05:34:49.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/6324
+- author: neomoth
+  changes:
+  - message: "Removed my own shitcode \U0001F5E3️\U0001F525\U0001F525\U0001F525."
+    type: Remove
+  id: 408871
+  time: '2026-09-25T06:48:51.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/6191
+- author: Light
+  changes:
+  - message: Polished the new health analyzer UI.
+    type: Fix
+  id: 408872
+  time: '2026-09-25T10:29:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/6106
+- author: Light
+  changes:
+  - message: The health analyzer now displays open surgeries and incisions and catatonic / hollowed out state.
+    type: Add
+  id: 408873
+  time: '2026-09-25T10:29:18.000000+00:00'
+  url: https://github.com/ss14Starlight/space-station-14/pull/6106
 Order: -1
