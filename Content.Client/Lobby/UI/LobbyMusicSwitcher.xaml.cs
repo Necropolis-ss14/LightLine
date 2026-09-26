@@ -55,14 +55,11 @@ public sealed partial class LobbyMusicSwitcher : BoxContainer
         if (!_rocking)
             return;
 
-        // No rocking while bouncing.
-        if (!_bouncing)
-        {
-            _rockIndex += _rockDirection;
-            if (_rockIndex >= RockFrames.Length - 1 || _rockIndex <= 0)
-                _rockDirection *= -1;
-            VinylRect.TexturePath = RockFrames[_rockIndex];
-        }
+        // Rocking continues even mid-bounce.
+        _rockIndex += _rockDirection;
+        if (_rockIndex >= RockFrames.Length - 1 || _rockIndex <= 0)
+            _rockDirection *= -1;
+        VinylRect.TexturePath = RockFrames[_rockIndex];
         Timer.Spawn(RockMs, RockTick);
     }
 
@@ -82,16 +79,24 @@ public sealed partial class LobbyMusicSwitcher : BoxContainer
         if (!_bouncing)
             return;
 
+        // High jump with a second smaller bounce on landing.
+        // Clicks are ignored until the whole sequence finishes.
         switch (step)
         {
             case 0:
-                VinylRect.Margin = new Thickness(0f, -14f, 0f, 14f);
+                VinylRect.Margin = new Thickness(0f, -20f, 0f, 20f);
                 break;
             case 1:
-                VinylRect.Margin = new Thickness(0f, -26f, 0f, 26f);
+                VinylRect.Margin = new Thickness(0f, -44f, 0f, 44f);
                 break;
             case 2:
-                VinylRect.Margin = new Thickness(0f, -8f, 0f, 8f);
+                VinylRect.Margin = new Thickness(0f, -16f, 0f, 16f);
+                break;
+            case 3:
+                VinylRect.Margin = new Thickness(0f);
+                break;
+            case 4:
+                VinylRect.Margin = new Thickness(0f, -10f, 0f, 10f);
                 break;
             default:
                 VinylRect.Margin = new Thickness(0f);
