@@ -42,6 +42,7 @@ ui-options-glass-theme = Полупрозрачность (Beta)
 ui-glass-prompt-title = Полупрозрачность интерфейса
 ui-glass-prompt-line1 = Включить тему «полупрозрачность»?
 ui-glass-prompt-line2 = Переключайте галочку, чтобы посмотреть вживую.
+ui-glass-prompt-line3 = Вы сможете выключить или включить полупрозрачность в настройках игры.
 ui-glass-prompt-confirm = Подтвердить
 ui-options-general-ghost-themes = Темы призрака
 ui-options-general-ghost-themes-force-tester = Принудительно показывать вкладку тестера в меню тем призрака

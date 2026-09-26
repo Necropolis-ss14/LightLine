@@ -91,10 +91,13 @@ namespace Content.Client.Lobby
             _userInterfaceManager.GetUIController<LobbyUIController>().OnAnyCharacterOrJobChange += UpdateReadyAllowed;
 
             // Starlight: first-run liquid glass prompt with live preview.
+            // Shown only to newcomers (no characters yet), veterans are marked silently.
             if (!_cfg.GetCVar(StarlightCCVars.UIGlassThemeSeen))
             {
-                var glassPrompt = _userInterfaceManager.CreateWindow<GlassThemePrompt>();
-                glassPrompt.OpenCentered();
+                if (_preferences.ServerDataLoaded)
+                    MaybeShowGlassPrompt();
+                else
+                    _preferences.OnServerDataLoaded += OnPrefsLoadedForGlassPrompt;
             }
 
             // We need to set the disabled state of the ready button when the preferences are loaded...
@@ -102,6 +105,28 @@ namespace Content.Client.Lobby
             if(_preferences.ServerDataLoaded)
                 UpdateReadyAllowed();
             _preferences.OnServerDataLoaded += UpdateReadyAllowed;
+        }
+
+        private void OnPrefsLoadedForGlassPrompt()
+        {
+            _preferences.OnServerDataLoaded -= OnPrefsLoadedForGlassPrompt;
+            MaybeShowGlassPrompt();
+        }
+
+        private void MaybeShowGlassPrompt()
+        {
+            if (_cfg.GetCVar(StarlightCCVars.UIGlassThemeSeen))
+                return;
+
+            // Veterans (already have characters) never see the prompt.
+            if ((_preferences.Preferences?.Characters.Count ?? 0) != 0)
+            {
+                _cfg.SetCVar(StarlightCCVars.UIGlassThemeSeen, true);
+                return;
+            }
+
+            var glassPrompt = _userInterfaceManager.CreateWindow<GlassThemePrompt>();
+            glassPrompt.OpenCentered();
         }
 
         private string GetReadyButtonTooltipText()
@@ -130,6 +155,7 @@ namespace Content.Client.Lobby
             _gameTicker.LobbyStatusUpdated -= LobbyStatusUpdated;
             _gameTicker.LobbyLateJoinStatusUpdated -= LobbyLateJoinStatusUpdated;
             _contentAudioSystem.LobbySoundtrackChanged -= UpdateLobbySoundtrackInfo;
+            _preferences.OnServerDataLoaded -= OnPrefsLoadedForGlassPrompt;
 
             _voteManager.ClearPopupContainer();
 

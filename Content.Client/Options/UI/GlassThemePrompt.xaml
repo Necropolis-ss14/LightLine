@@ -4,6 +4,7 @@
     <BoxContainer Orientation="Vertical" Margin="8" SeparationOverride="8">
         <Label Text="{Loc 'ui-glass-prompt-line1'}" />
         <Label Text="{Loc 'ui-glass-prompt-line2'}" />
+        <Label Text="{Loc 'ui-glass-prompt-line3'}" />
         <CheckBox Name="GlassCheckBox" Access="Public" Text="{Loc 'ui-options-glass-theme'}" />
         <Button Name="ConfirmButton" Access="Public" Text="{Loc 'ui-glass-prompt-confirm'}"
                 HorizontalAlignment="Right" />

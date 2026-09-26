@@ -46,6 +46,7 @@ ui-options-glass-theme = Translucency (Beta)
 ui-glass-prompt-title = Interface translucency
 ui-glass-prompt-line1 = Enable the "translucency" theme?
 ui-glass-prompt-line2 = Toggle the checkbox to preview it live.
+ui-glass-prompt-line3 = You can turn translucency on or off later in the game settings.
 ui-glass-prompt-confirm = Confirm
 ui-options-general-ghost-themes = Ghost Themes
 ui-options-general-ghost-themes-force-tester = Force display the Tester tab in the Ghost Themes menu
