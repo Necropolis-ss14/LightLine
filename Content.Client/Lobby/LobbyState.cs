@@ -79,6 +79,8 @@ namespace Content.Client.Lobby
             UpdateLobbyUi();
 
             Lobby.CharacterPreview.CharacterSetupButton.OnPressed += OnSetupPressed;
+            Lobby.MusicSwitcher.PrevButton.OnPressed += OnMusicPrevPressed;
+            Lobby.MusicSwitcher.NextButton.OnPressed += OnMusicNextPressed;
             Lobby.CharacterPreview.PrioritiesUpdated += UpdateReadyAllowed;
             Lobby.ReadyButton.OnPressed += OnReadyPressed;
             Lobby.ReadyButton.OnToggled += OnReadyToggled;
@@ -160,6 +162,8 @@ namespace Content.Client.Lobby
             _voteManager.ClearPopupContainer();
 
             Lobby!.CharacterPreview.CharacterSetupButton.OnPressed -= OnSetupPressed;
+            Lobby!.MusicSwitcher.PrevButton.OnPressed -= OnMusicPrevPressed;
+            Lobby!.MusicSwitcher.NextButton.OnPressed -= OnMusicNextPressed;
             Lobby!.ReadyButton.OnPressed -= OnReadyPressed;
             Lobby!.ReadyButton.OnToggled -= OnReadyToggled;
 
@@ -303,6 +307,7 @@ namespace Content.Client.Lobby
             if (ev.SoundtrackFilename == null)
             {
                 Lobby!.LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
+                Lobby!.MusicSwitcher.TrackLabel.Text = "—";
             }
             else if (
                 ev.SoundtrackFilename != null
@@ -324,7 +329,18 @@ namespace Content.Client.Lobby
                     ("songArtist", artist));
 
                 Lobby!.LobbySong.SetMarkup(markup);
+                Lobby!.MusicSwitcher.TrackLabel.Text = $"{title} — {artist}";
             }
+        }
+
+        private void OnMusicPrevPressed(BaseButton.ButtonEventArgs args)
+        {
+            _contentAudioSystem.PlayPreviousLobbyTrack();
+        }
+
+        private void OnMusicNextPressed(BaseButton.ButtonEventArgs args)
+        {
+            _contentAudioSystem.PlayNextLobbyTrack();
         }
 
         private void UpdateLobbyBackground()
