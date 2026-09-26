@@ -75,7 +75,7 @@ public sealed partial class MarqueeLabel : Label
     {
         if (string.IsNullOrEmpty(_fullText) || Size.X <= 0)
             return false;
-        // Rough average glyph width for the default UI font.
-        return _fullText.Length * 6.6f > Size.X;
+        // Always scroll: classic player feel even for short titles.
+        return true;
     }
 }

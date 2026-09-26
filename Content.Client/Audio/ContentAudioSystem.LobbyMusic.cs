@@ -7,6 +7,7 @@ using Robust.Client;
 using Robust.Client.ResourceManagement;
 using Robust.Client.State;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Components;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -312,15 +313,28 @@ public sealed partial class ContentAudioSystem
 
     private void UpdateLobbyMusic()
     {
-        if (
-            _lobbySoundtrackInfo != null
-            && _timing.CurTime >= _lobbySoundtrackInfo.NextTrackOn
-            && _lobbyPlaylist?.Length > 0
-            )
+        if (_lobbySoundtrackInfo == null || _lobbyPlaylist is not { Length: > 0 })
         {
-            var nextSoundtrackFilename = GetNextSoundtrackFromPlaylist(_lobbySoundtrackInfo.Filename, _lobbyPlaylist);
-            PlaySoundtrack(nextSoundtrackFilename);
+            return;
         }
+
+        var finished = _timing.CurTime >= _lobbySoundtrackInfo.NextTrackOn;
+        if (!finished
+            && (!TryComp(_lobbySoundtrackInfo.MusicStreamEntityUid, out AudioComponent? comp) || !comp.Playing))
+        {
+            // Safety net: stream died or finished early (e.g. bad duration metadata).
+            _sawmill.Debug("Lobby track finished early, advancing playlist.");
+            finished = true;
+        }
+
+        if (!finished)
+        {
+            return;
+        }
+
+        var nextSoundtrackFilename = GetNextSoundtrackFromPlaylist(_lobbySoundtrackInfo.Filename, _lobbyPlaylist);
+        EndLobbyMusic();
+        PlaySoundtrack(nextSoundtrackFilename);
     }
 
     private static string GetNextSoundtrackFromPlaylist(string currentSoundtrackFilename, string[] playlist)

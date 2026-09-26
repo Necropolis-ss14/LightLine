@@ -34,6 +34,8 @@ public sealed partial class LobbyMusicSwitcher : BoxContainer
     {
         RobustXamlLoader.Load(this);
         VinylRect.OnKeyBindDown += OnVinylInput;
+        // TODO debug vinyl visibility, remove after.
+        System.Console.WriteLine($"[vinyl] texture={VinylRect.Texture?.Size} minsize={VinylRect.MinSize} size={VinylRect.Size}");
     }
 
     protected override void EnteredTree()
