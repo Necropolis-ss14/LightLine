@@ -19,6 +19,7 @@ public static class GlassTheme
     private const float GlassBorderAlpha = 0.9f;
     private const float GlassBorderLighten = 0.15f;
     private const float GlassPanelAlpha = 0.8f;
+    private const float GlassWhiten = 0.12f;
 
     public static Stylesheet MakeGlass(Stylesheet source, out int glassifiedBoxes)
     {
@@ -36,12 +37,26 @@ public static class GlassTheme
             props.Add(CloneProperty(prop, ref count));
         // Textured panels (window backgrounds, chat panels, ...) have no alpha of
         // their own, so make them translucent via modulate-self instead.
-        if (!props.Any(p => p.Name == Control.StylePropertyModulateSelf)
-            && props.Any(p => p.Name == PanelContainer.StylePropertyPanel && p.Value is StyleBoxTexture))
+        // Existing modulate-self tints (e.g. PDA) get their alpha scaled, not skipped.
+        var panelIdx = props.FindIndex(p => p.Name == PanelContainer.StylePropertyPanel
+            && p.Value is StyleBoxTexture);
+        if (panelIdx >= 0)
         {
-            props.Add(new StyleProperty(Control.StylePropertyModulateSelf,
-                new Color(1f, 1f, 1f, GlassPanelAlpha)));
-            count++;
+            var modIdx = props.FindIndex(p => p.Name == Control.StylePropertyModulateSelf
+                && p.Value is Color c && c.A >= 0.99f);
+            if (modIdx >= 0)
+            {
+                var tint = (Color) props[modIdx].Value;
+                props[modIdx] = new StyleProperty(Control.StylePropertyModulateSelf,
+                    Glassify(tint, GlassPanelAlpha, GlassWhiten));
+                count++;
+            }
+            else if (!props.Any(p => p.Name == Control.StylePropertyModulateSelf))
+            {
+                props.Add(new StyleProperty(Control.StylePropertyModulateSelf,
+                    new Color(1f, 1f, 1f, GlassPanelAlpha)));
+                count++;
+            }
         }
         return new StyleRule(rule.Selector, props);
     }
@@ -52,12 +67,20 @@ public static class GlassTheme
             return property;
 
         var glass = new StyleBoxFlat(box);
-        var bg = Glassify(glass.BackgroundColor, GlassBackgroundAlpha, 0f);
+        var bg = Glassify(glass.BackgroundColor, GlassBackgroundAlpha, GlassWhiten);
         if (bg.A < glass.BackgroundColor.A)
             count++;
         glass.BackgroundColor = bg;
         glass.BorderColor = Glassify(glass.BorderColor, GlassBorderAlpha, GlassBorderLighten);
         return new StyleProperty(property.Name, glass);
+    }
+
+    /// <summary>
+    /// Translucent whitened variant of an opaque panel color, for hardcoded backgrounds.
+    /// </summary>
+    public static Color GlassifyPanel(Color color)
+    {
+        return Glassify(color, GlassBackgroundAlpha, GlassWhiten);
     }
 
     private static Color Glassify(Color color, float alpha, float lighten)
