@@ -105,6 +105,44 @@ public sealed partial class ContentAudioSystem
 
     private void OnRoundEndCancelMessage(RoundEndCancelMessageEvent ev) => EndLobbyMusic();
 
+    /// <summary>
+    /// Whether there is a lobby playlist available to skip through.
+    /// </summary>
+    public bool HasLobbyPlaylist => _lobbyPlaylist is { Length: > 0 };
+
+    /// <summary>
+    /// Manually switch to the next lobby track. Wraps around at the end.
+    /// </summary>
+    public void PlayNextLobbyTrack()
+    {
+        SkipLobbyTrack(1);
+    }
+
+    /// <summary>
+    /// Manually switch to the previous lobby track. Wraps around at the start.
+    /// </summary>
+    public void PlayPreviousLobbyTrack()
+    {
+        SkipLobbyTrack(-1);
+    }
+
+    private void SkipLobbyTrack(int direction)
+    {
+        if (_lobbyPlaylist is not { Length: > 0 }
+            || !_configManager.GetCVar(CCVars.LobbyMusicEnabled)
+            || _state.CurrentState is not LobbyState)
+        {
+            return;
+        }
+
+        var current = _lobbySoundtrackInfo?.Filename;
+        var index = current == null ? -1 : Array.IndexOf(_lobbyPlaylist, current);
+        var nextIndex = (index + direction + _lobbyPlaylist.Length) % _lobbyPlaylist.Length;
+
+        EndLobbyMusic();
+        PlaySoundtrack(_lobbyPlaylist[nextIndex]);
+    }
+
     #endregion
 
     private void LobbyMusicVolumeCVarChanged(float volume)
