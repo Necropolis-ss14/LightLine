@@ -2,7 +2,7 @@
               xmlns:lobbyUi="clr-namespace:Content.Client.Lobby.UI"
               Orientation="Vertical"
               SeparationOverride="2">
-    <TextureRect Name="VinylRect" Access="Public" HorizontalAlignment="Left" MinSize="96 96"
+    <TextureRect Name="VinylRect" Access="Public" HorizontalAlignment="Left" MinSize="192 192"
                  Stretch="Scale" MouseFilter="Stop"
                  TexturePath="/Textures/_Starlight/Interface/Vinyl/rock_2.png" />
     <PanelContainer StyleClasses="BackgroundPanel">
