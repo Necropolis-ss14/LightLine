@@ -23,6 +23,21 @@ public sealed partial class AudioTab : Control
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);
 
+        // Starlight start: audio output device selection.
+        var deviceOptions = new List<OptionDropDownCVar<string>.ValueOption>
+        {
+            new(string.Empty, Loc.GetString("ui-options-audio-device-default")),
+        };
+        foreach (var device in _audio.GetAudioDevices())
+        {
+            deviceOptions.Add(new OptionDropDownCVar<string>.ValueOption(
+                device,
+                IAudioManager.ConvertAudioDeviceNameForDisplay(device)));
+        }
+        Control.AddOptionDropDown(CVars.AudioDevice, DropDownAudioDevice, deviceOptions);
+        Control.AddOptionCheckBox(CVars.AudioHrtf, HrtfCheckBox);
+        // Starlight end
+
         var masterVolume = Control.AddOptionPercentSlider(
             CVars.AudioMasterVolume,
             SliderVolumeMaster,
