@@ -72,11 +72,13 @@ public partial class PdaWindow : BaseWindow
             _cfg.UnsubValueChanged(StarlightCCVars.UIGlassTheme, _onGlassChanged);
     }
 
+    private const float PdaGlassAlpha = 0.55f;
+
     private void ApplyBorder()
     {
         var color = _borderBase;
         if (_cfg.GetCVar(StarlightCCVars.UIGlassTheme))
-            color = new Color(color.R, color.G, color.B, color.A * 0.8f);
+            color = new Color(color.R, color.G, color.B, color.A * PdaGlassAlpha);
         Background.ModulateSelfOverride = color;
     }
 
