@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Content.Client.Audio;
 using Content.Client.GameTicking.Managers;
 using Content.Client.Lobby.UI;
@@ -130,6 +132,22 @@ namespace Content.Client.Lobby
 
             var glassPrompt = _userInterfaceManager.CreateWindow<GlassThemePrompt>();
             glassPrompt.OpenCentered();
+
+            // Newcomers get the timefracture track with the prompt.
+            _glassTrackSwitchPending = true;
+            TrySwitchNewcomerTrack();
+        }
+
+        private bool _glassTrackSwitchPending;
+
+        private void TrySwitchNewcomerTrack()
+        {
+            var track = _contentAudioSystem.LobbyPlaylistTracks
+                ?.FirstOrDefault(f => f.Contains("timefracture", StringComparison.OrdinalIgnoreCase));
+            if (track == null || _contentAudioSystem.CurrentLobbyTrack == track)
+                return;
+
+            _contentAudioSystem.PlayLobbyTrack(track);
         }
 
         private string GetReadyButtonTooltipText()
@@ -306,6 +324,13 @@ namespace Content.Client.Lobby
 
         private void UpdateLobbySoundtrackInfo(LobbySoundtrackChangedEvent ev)
         {
+            // Playlist may arrive after the newcomer prompt - retry the track switch once.
+            if (_glassTrackSwitchPending)
+            {
+                _glassTrackSwitchPending = false;
+                TrySwitchNewcomerTrack();
+            }
+
             if (ev.SoundtrackFilename == null)
             {
                 Lobby!.LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
