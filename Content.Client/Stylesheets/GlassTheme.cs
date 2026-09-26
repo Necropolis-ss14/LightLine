@@ -14,8 +14,8 @@ namespace Content.Client.Stylesheets;
 /// </summary>
 public static class GlassTheme
 {
-    private const float GlassWhiteMix = 0.85f;
-    private const float GlassBackgroundAlpha = 0.85f;
+    private const float GlassWhiteMix = 0.8f;
+    private const float GlassBackgroundAlpha = 0.87f;
     private const float GlassTextDarken = 0.75f;
     private const float GlassTextMinLuminance = 0.55f;
 
@@ -63,7 +63,7 @@ public static class GlassTheme
         {
             var glass = new StyleBoxFlat
             {
-                BackgroundColor = new Color(1f, 1f, 1f, GlassBackgroundAlpha),
+                BackgroundColor = new Color(GlassTint.R, GlassTint.G, GlassTint.B, GlassBackgroundAlpha),
                 BorderColor = GlassBorder,
                 BorderThickness = new Thickness(2f),
             };
@@ -95,11 +95,14 @@ public static class GlassTheme
         return Whiten(color);
     }
 
+    // Light gray frosted tint (iPhone-style, but not eye-searing white).
+    private static readonly Color GlassTint = new(0.82f, 0.82f, 0.85f);
+
     private static Color Whiten(Color color)
     {
-        var r = color.R + (1f - color.R) * GlassWhiteMix;
-        var g = color.G + (1f - color.G) * GlassWhiteMix;
-        var b = color.B + (1f - color.B) * GlassWhiteMix;
+        var r = color.R + (GlassTint.R - color.R) * GlassWhiteMix;
+        var g = color.G + (GlassTint.G - color.G) * GlassWhiteMix;
+        var b = color.B + (GlassTint.B - color.B) * GlassWhiteMix;
         return new Color(r, g, b, GlassBackgroundAlpha);
     }
 
