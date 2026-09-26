@@ -1,7 +1,6 @@
 using Content.Client.Stylesheets;
 using Content.Shared._Starlight.CCVar;
 using Robust.Client.Graphics;
-using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Analyzers;
 using Robust.Shared.Configuration;
@@ -20,7 +19,6 @@ namespace Content.Client.UserInterface.Controls;
 public partial class GlassPanel : PanelContainer
 {
     [Dependency] private IConfigurationManager _cfg = default!;
-    [Dependency] private IResourceCache _resCache = default!;
 
     private Color _glassColor = Color.Transparent;
     private Action<bool>? _onGlassChanged;
@@ -72,31 +70,16 @@ public partial class GlassPanel : PanelContainer
         if (_cfg == null!)
             return;
 
-        if (_cfg.GetCVar(StarlightCCVars.UIGlassTheme))
+        var box = _cfg.GetCVar(StarlightCCVars.UIGlassTheme)
+            ? new StyleBoxFlat(GlassTheme.GlassifyPanel(_glassColor))
+            : new StyleBoxFlat(_glassColor);
+        if (_glassContentMargin >= 0f)
         {
-            var frost = new StyleBoxTexture { Texture = GlassTheme.LoadNoise(_resCache) };
-            if (_glassContentMargin >= 0f)
-            {
-                frost.ContentMarginTopOverride = _glassContentMargin;
-                frost.ContentMarginBottomOverride = _glassContentMargin;
-                frost.ContentMarginLeftOverride = _glassContentMargin;
-                frost.ContentMarginRightOverride = _glassContentMargin;
-            }
-            PanelOverride = frost;
-            ModulateSelfOverride = GlassTheme.GlassifyPanel(_glassColor);
+            box.ContentMarginTopOverride = _glassContentMargin;
+            box.ContentMarginBottomOverride = _glassContentMargin;
+            box.ContentMarginLeftOverride = _glassContentMargin;
+            box.ContentMarginRightOverride = _glassContentMargin;
         }
-        else
-        {
-            var box = new StyleBoxFlat(_glassColor);
-            if (_glassContentMargin >= 0f)
-            {
-                box.ContentMarginTopOverride = _glassContentMargin;
-                box.ContentMarginBottomOverride = _glassContentMargin;
-                box.ContentMarginLeftOverride = _glassContentMargin;
-                box.ContentMarginRightOverride = _glassContentMargin;
-            }
-            PanelOverride = box;
-            ModulateSelfOverride = null;
-        }
+        PanelOverride = box;
     }
 }

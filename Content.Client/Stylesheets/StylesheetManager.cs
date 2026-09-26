@@ -72,10 +72,7 @@ namespace Content.Client.Stylesheets
             SheetNano = new StyleNano(_resCache).Stylesheet; // TODO: REMOVE (obsolete)
             SheetSpace = new StyleSpace(_resCache).Stylesheet; // TODO: REMOVE (obsolete)
             Starlight = new StyleStarlight(_resCache).Stylesheet; //🌟Starlight🌟 TODO: REMOVE (obsolete)
-            SheetGlassNanotrasen = GlassTheme.MakeGlass(
-                SheetNanotrasen,
-                GlassTheme.LoadNoise(_resCache),
-                out var glassified);
+            SheetGlassNanotrasen = GlassTheme.MakeGlass(SheetNanotrasen, out var glassified);
             sawmill.Debug($"Glass theme variant: {glassified} panels glassified.");
             // Applies the saved theme immediately and live-swaps on CVar change.
             _cfg.OnValueChanged(StarlightCCVars.UIGlassTheme, SetGlassTheme, true);
