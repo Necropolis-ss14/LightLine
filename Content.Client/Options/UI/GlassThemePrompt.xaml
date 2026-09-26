@@ -1,0 +1,11 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               Title="{Loc 'ui-glass-prompt-title'}"
+               MinSize="380 0">
+    <BoxContainer Orientation="Vertical" Margin="8" SeparationOverride="8">
+        <Label Text="{Loc 'ui-glass-prompt-line1'}" />
+        <Label Text="{Loc 'ui-glass-prompt-line2'}" />
+        <CheckBox Name="GlassCheckBox" Access="Public" Text="{Loc 'ui-options-glass-theme'}" />
+        <Button Name="ConfirmButton" Access="Public" Text="{Loc 'ui-glass-prompt-confirm'}"
+                HorizontalAlignment="Right" />
+    </BoxContainer>
+</DefaultWindow>

@@ -43,6 +43,10 @@ ui-options-sight-second-color = Sight Second Color
 ui-starlight = Daiquiri
 ui-options-auto-punctuate = Automatically punctuate in-character messages
 ui-options-glass-theme = Translucency (Beta)
+ui-glass-prompt-title = Interface translucency
+ui-glass-prompt-line1 = Enable the liquid glass theme?
+ui-glass-prompt-line2 = Toggle the checkbox to preview it live.
+ui-glass-prompt-confirm = Confirm
 ui-options-general-ghost-themes = Ghost Themes
 ui-options-general-ghost-themes-force-tester = Force display the Tester tab in the Ghost Themes menu
 

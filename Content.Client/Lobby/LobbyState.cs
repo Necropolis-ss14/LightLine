@@ -2,10 +2,12 @@ using Content.Client.Audio;
 using Content.Client.GameTicking.Managers;
 using Content.Client.Lobby.UI;
 using Content.Client.Message;
+using Content.Client.Options.UI; // Starlight glass prompt
 using Content.Client.Playtime;
 using Content.Client.UserInterface.Systems.Chat;
 using Content.Client.Voting;
 using Content.Shared.CCVar;
+using Content.Shared._Starlight.CCVar; // Starlight glass prompt
 using Robust.Client;
 using Robust.Client.Console;
 using Robust.Client.ResourceManagement;
@@ -87,6 +89,13 @@ namespace Content.Client.Lobby
             _gameTicker.LobbyLateJoinStatusUpdated += LobbyLateJoinStatusUpdated;
 
             _userInterfaceManager.GetUIController<LobbyUIController>().OnAnyCharacterOrJobChange += UpdateReadyAllowed;
+
+            // Starlight: first-run liquid glass prompt with live preview.
+            if (!_cfg.GetCVar(StarlightCCVars.UIGlassThemeSeen))
+            {
+                var glassPrompt = _userInterfaceManager.CreateWindow<GlassThemePrompt>();
+                glassPrompt.OpenCentered();
+            }
 
             // We need to set the disabled state of the ready button when the preferences are loaded...
             // Check for the case that they're already loaded!

@@ -42,6 +42,12 @@ public sealed partial class StarlightCCVars
         CVarDef.Create("ui.glass_theme", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /// <summary>
+    /// Whether the first-run liquid glass prompt was already shown.
+    /// </summary>
+    public static readonly CVarDef<bool> UIGlassThemeSeen =
+        CVarDef.Create("ui.glass_theme_seen", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
     /// How long to display the EORG popup for.
     /// </summary>
     public static readonly CVarDef<float> RoundEndNoEorgPopupTime =
