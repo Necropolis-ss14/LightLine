@@ -68,8 +68,8 @@ namespace Content.Client.Stylesheets
 
         private bool _glassFadeReady;
         private int _glassFadeId;
-        private const int GlassFadeSteps = 5;
-        private const int GlassFadeStepMs = 1000; // TODO test: 5s per phase, restore 30ms
+        private const int GlassFadeSteps = 25;
+        private const int GlassFadeStepMs = 200; // TODO test: 5s per phase, restore 30ms/5 steps
 
         private void ApplyGlassTheme(bool enabled)
         {
