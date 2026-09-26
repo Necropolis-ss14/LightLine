@@ -2,15 +2,17 @@
               xmlns:lobbyUi="clr-namespace:Content.Client.Lobby.UI"
               Orientation="Vertical"
               SeparationOverride="2">
-    <TextureRect Name="VinylRect" Access="Public" HorizontalAlignment="Center" MinSize="0 44"
-                 Stretch="KeepAspectCentered" MouseFilter="Stop"
+    <TextureRect Name="VinylRect" Access="Public" HorizontalAlignment="Center" MinSize="64 64"
+                 Stretch="Scale" MouseFilter="Stop"
                  TexturePath="/Textures/_Starlight/Interface/Vinyl/rock_2.png" />
-    <BoxContainer Orientation="Horizontal" SeparationOverride="4">
-        <Button Name="PrevButton" Access="Public" Text="◀" MinWidth="32" />
-        <lobbyUi:MarqueeLabel Name="TrackLabel" Access="Public" HorizontalExpand="True"
-                              VerticalAlignment="Center" ClipText="True" />
-        <Button Name="QueueButton" Access="Public" Text="☰" MinWidth="32"
-                ToolTip="{Loc 'ui-lobby-music-queue-tooltip'}" />
-        <Button Name="NextButton" Access="Public" Text="▶" MinWidth="32" />
-    </BoxContainer>
+    <PanelContainer StyleClasses="BackgroundPanel">
+        <BoxContainer Orientation="Horizontal" SeparationOverride="4" Margin="4">
+            <Button Name="PrevButton" Access="Public" Text="◀" MinWidth="32" />
+            <lobbyUi:MarqueeLabel Name="TrackLabel" Access="Public" HorizontalExpand="True"
+                                  VerticalAlignment="Center" ClipText="True" />
+            <Button Name="QueueButton" Access="Public" Text="☰" MinWidth="32"
+                    ToolTip="{Loc 'ui-lobby-music-queue-tooltip'}" />
+            <Button Name="NextButton" Access="Public" Text="▶" MinWidth="32" />
+        </BoxContainer>
+    </PanelContainer>
 </BoxContainer>

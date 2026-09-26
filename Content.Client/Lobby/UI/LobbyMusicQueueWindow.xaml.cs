@@ -26,6 +26,9 @@ public sealed partial class LobbyMusicQueueWindow : DefaultWindow
         IoCManager.InjectDependencies(this);
 
         _audio = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<ContentAudioSystem>();
+        // NOTE: subscribing fires the handler immediately with the current track,
+        // so subscribe exactly once here (re-subscribing inside RebuildList recursed infinitely).
+        _audio.LobbySoundtrackChanged += OnTrackChanged;
         OnOpen += RebuildList;
     }
 
@@ -47,9 +50,6 @@ public sealed partial class LobbyMusicQueueWindow : DefaultWindow
         TrackList.RemoveAllChildren();
         if (_audio?.LobbyPlaylistTracks is not { } playlist)
             return;
-
-        _audio.LobbySoundtrackChanged -= OnTrackChanged;
-        _audio.LobbySoundtrackChanged += OnTrackChanged;
 
         var current = _audio.CurrentLobbyTrack;
         foreach (var filename in playlist)
