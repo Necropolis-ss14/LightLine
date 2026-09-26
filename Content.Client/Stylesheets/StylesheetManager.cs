@@ -6,7 +6,9 @@ using Content.Shared._Starlight.CCVar; // Starlight glass theme toggle
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Shared.Configuration;
+using Robust.Shared.Maths;
 using Robust.Shared.Reflection;
+using Timer = Robust.Shared.Timing.Timer;
 
 #region Starlight
 using Content.Client._Starlight;
@@ -48,10 +50,58 @@ namespace Content.Client.Stylesheets
 
         /// <summary>
         /// Starlight: live swap between the opaque and translucent ("liquid glass") interface theme.
+        /// The swap is wrapped in a quick fade so the change feels smooth.
         /// </summary>
         public void SetGlassTheme(bool enabled)
         {
+            // Instant apply during startup, faded swap afterwards.
+            if (!_glassFadeReady)
+            {
+                ApplyGlassTheme(enabled);
+                return;
+            }
+            var id = ++_glassFadeId;
+            FadeGlassStep(id, enabled, 0, true);
+        }
+
+        private bool _glassFadeReady;
+        private int _glassFadeId;
+        private const int GlassFadeSteps = 5;
+        private const int GlassFadeStepMs = 30;
+
+        private void ApplyGlassTheme(bool enabled)
+        {
             _userInterfaceManager.Stylesheet = enabled ? SheetGlassNanotrasen : SheetNanotrasen;
+        }
+
+        private void FadeGlassStep(int id, bool enabled, int step, bool fadingOut)
+        {
+            if (id != _glassFadeId)
+                return;
+
+            var root = _userInterfaceManager.RootControl;
+            if (root == null)
+            {
+                ApplyGlassTheme(enabled);
+                return;
+            }
+
+            var t = (step + 1) / (float) (GlassFadeSteps + 1);
+            root.Modulate = new Color(1f, 1f, 1f, fadingOut ? 1f - t : t);
+            if (step >= GlassFadeSteps - 1)
+            {
+                if (fadingOut)
+                {
+                    ApplyGlassTheme(enabled);
+                    FadeGlassStep(id, enabled, 0, false);
+                }
+                else
+                {
+                    root.Modulate = Color.White;
+                }
+                return;
+            }
+            Timer.Spawn(GlassFadeStepMs, () => FadeGlassStep(id, enabled, step + 1, fadingOut));
         }
 
         public HashSet<Type> UnusedSheetlets { get; private set; } = [];
@@ -76,6 +126,7 @@ namespace Content.Client.Stylesheets
             sawmill.Debug($"Glass theme variant: {glassified} panels glassified.");
             // Applies the saved theme immediately and live-swaps on CVar change.
             _cfg.OnValueChanged(StarlightCCVars.UIGlassTheme, SetGlassTheme, true);
+            _glassFadeReady = true;
 
             // warn about unused sheetlets
             if (UnusedSheetlets.Count > 0)
