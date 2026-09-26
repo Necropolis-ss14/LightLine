@@ -17,3 +17,5 @@ ui-lobby-ready-button-tooltip-not-loaded = Подождите! Ваши перс
 ui-lobby-ready-button-tooltip-join-state = Присоединиться к текущей смене с опозданием.
 ui-lobby-lock-priorities-checkbox-tooltip = Разрешить перетаскивание приоритетов должностей напрямую.
 ui-lobby-lock-priorities-checkbox-label = Разрешить перетаскивание
+ui-lobby-music-queue-title = Очередь музыки
+ui-lobby-music-queue-tooltip = Показать очередь

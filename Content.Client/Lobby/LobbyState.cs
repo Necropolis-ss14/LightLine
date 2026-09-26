@@ -81,6 +81,7 @@ namespace Content.Client.Lobby
             Lobby.CharacterPreview.CharacterSetupButton.OnPressed += OnSetupPressed;
             Lobby.MusicSwitcher.PrevButton.OnPressed += OnMusicPrevPressed;
             Lobby.MusicSwitcher.NextButton.OnPressed += OnMusicNextPressed;
+            Lobby.MusicSwitcher.QueueButton.OnPressed += OnMusicQueuePressed;
             Lobby.CharacterPreview.PrioritiesUpdated += UpdateReadyAllowed;
             Lobby.ReadyButton.OnPressed += OnReadyPressed;
             Lobby.ReadyButton.OnToggled += OnReadyToggled;
@@ -164,6 +165,7 @@ namespace Content.Client.Lobby
             Lobby!.CharacterPreview.CharacterSetupButton.OnPressed -= OnSetupPressed;
             Lobby!.MusicSwitcher.PrevButton.OnPressed -= OnMusicPrevPressed;
             Lobby!.MusicSwitcher.NextButton.OnPressed -= OnMusicNextPressed;
+            Lobby!.MusicSwitcher.QueueButton.OnPressed -= OnMusicQueuePressed;
             Lobby!.ReadyButton.OnPressed -= OnReadyPressed;
             Lobby!.ReadyButton.OnToggled -= OnReadyToggled;
 
@@ -307,7 +309,7 @@ namespace Content.Client.Lobby
             if (ev.SoundtrackFilename == null)
             {
                 Lobby!.LobbySong.SetMarkup(Loc.GetString("lobby-state-song-no-song-text"));
-                Lobby!.MusicSwitcher.TrackLabel.Text = "—";
+                Lobby!.MusicSwitcher.TrackLabel.FullText = "—";
             }
             else if (
                 ev.SoundtrackFilename != null
@@ -329,7 +331,7 @@ namespace Content.Client.Lobby
                     ("songArtist", artist));
 
                 Lobby!.LobbySong.SetMarkup(markup);
-                Lobby!.MusicSwitcher.TrackLabel.Text = $"{title} — {artist}";
+                Lobby!.MusicSwitcher.TrackLabel.FullText = $"{title} — {artist}";
             }
         }
 
@@ -341,6 +343,11 @@ namespace Content.Client.Lobby
         private void OnMusicNextPressed(BaseButton.ButtonEventArgs args)
         {
             _contentAudioSystem.PlayNextLobbyTrack();
+        }
+
+        private void OnMusicQueuePressed(BaseButton.ButtonEventArgs args)
+        {
+            _userInterfaceManager.CreateWindow<LobbyMusicQueueWindow>().OpenCentered();
         }
 
         private void UpdateLobbyBackground()

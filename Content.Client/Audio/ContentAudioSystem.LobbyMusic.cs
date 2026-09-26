@@ -111,6 +111,33 @@ public sealed partial class ContentAudioSystem
     public bool HasLobbyPlaylist => _lobbyPlaylist is { Length: > 0 };
 
     /// <summary>
+    /// Current lobby playlist filenames, if any.
+    /// </summary>
+    public IReadOnlyList<string>? LobbyPlaylistTracks => _lobbyPlaylist;
+
+    /// <summary>
+    /// Currently playing lobby track filename, if any.
+    /// </summary>
+    public string? CurrentLobbyTrack => _lobbySoundtrackInfo?.Filename;
+
+    /// <summary>
+    /// Manually switch to a specific lobby track by filename.
+    /// </summary>
+    public void PlayLobbyTrack(string filename)
+    {
+        if (_lobbyPlaylist is not { Length: > 0 }
+            || Array.IndexOf(_lobbyPlaylist, filename) < 0
+            || !_configManager.GetCVar(CCVars.LobbyMusicEnabled)
+            || _state.CurrentState is not LobbyState)
+        {
+            return;
+        }
+
+        EndLobbyMusic();
+        PlaySoundtrack(filename);
+    }
+
+    /// <summary>
     /// Manually switch to the next lobby track. Wraps around at the end.
     /// </summary>
     public void PlayNextLobbyTrack()
@@ -139,8 +166,7 @@ public sealed partial class ContentAudioSystem
         var index = current == null ? -1 : Array.IndexOf(_lobbyPlaylist, current);
         var nextIndex = (index + direction + _lobbyPlaylist.Length) % _lobbyPlaylist.Length;
 
-        EndLobbyMusic();
-        PlaySoundtrack(_lobbyPlaylist[nextIndex]);
+        PlayLobbyTrack(_lobbyPlaylist[nextIndex]);
     }
 
     #endregion
