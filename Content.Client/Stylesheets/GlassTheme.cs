@@ -8,26 +8,27 @@ using Robust.Shared.Maths;
 namespace Content.Client.Stylesheets;
 
 /// <summary>
-/// Builds a translucent "liquid glass" variant of a stylesheet by cloning its
-/// rules and lowering the alpha of opaque <see cref="StyleBoxFlat"/> panels.
-/// Textured window backgrounds (which have no alpha of their own) are made
-/// translucent via modulate-self. Already-translucent boxes are kept as is.
+/// Builds a light "liquid glass" (iPhone-style white frosted) variant of a stylesheet:
+/// panel backgrounds become translucent white, light text is darkened for readability.
+/// Textured buttons and icons are left untouched to preserve their look.
 /// </summary>
 public static class GlassTheme
 {
-    private const float GlassBackgroundAlpha = 0.8f;
-    private const float GlassBorderAlpha = 0.9f;
-    private const float GlassBorderLighten = 0.15f;
-    private const float GlassPanelAlpha = 0.8f;
-    private const float GlassWhiten = 0.12f;
+    private const float GlassWhiteMix = 0.85f;
+    private const float GlassBackgroundAlpha = 0.85f;
+    private const float GlassTextDarken = 0.75f;
+    private const float GlassTextMinLuminance = 0.55f;
+
+    private static readonly Color GlassBorder = new(0.82f, 0.82f, 0.84f, 0.9f);
 
     public static Stylesheet MakeGlass(Stylesheet source, out int glassifiedBoxes)
     {
         var count = 0;
-        var rules = source.Rules.Select(rule => CloneRule(rule, ref count));
-        var sheet = new Stylesheet(rules.ToArray());
+        var rules = new List<StyleRule>();
+        foreach (var rule in source.Rules)
+            rules.Add(CloneRule(rule, ref count));
         glassifiedBoxes = count;
-        return sheet;
+        return new Stylesheet(rules.ToArray());
     }
 
     private static StyleRule CloneRule(StyleRule rule, ref int count)
@@ -35,44 +36,53 @@ public static class GlassTheme
         var props = new List<StyleProperty>();
         foreach (var prop in rule.Properties)
             props.Add(CloneProperty(prop, ref count));
-        // Textured panels (window backgrounds, chat panels, ...) have no alpha of
-        // their own, so make them translucent via modulate-self instead.
-        // Existing modulate-self tints (e.g. PDA) get their alpha scaled, not skipped.
-        var panelIdx = props.FindIndex(p => p.Name == PanelContainer.StylePropertyPanel
-            && p.Value is StyleBoxTexture);
-        if (panelIdx >= 0)
-        {
-            var modIdx = props.FindIndex(p => p.Name == Control.StylePropertyModulateSelf
-                && p.Value is Color c && c.A >= 0.99f);
-            if (modIdx >= 0)
-            {
-                var tint = (Color) props[modIdx].Value;
-                props[modIdx] = new StyleProperty(Control.StylePropertyModulateSelf,
-                    Glassify(tint, GlassPanelAlpha, GlassWhiten));
-                count++;
-            }
-            else if (!props.Any(p => p.Name == Control.StylePropertyModulateSelf))
-            {
-                props.Add(new StyleProperty(Control.StylePropertyModulateSelf,
-                    new Color(1f, 1f, 1f, GlassPanelAlpha)));
-                count++;
-            }
-        }
         return new StyleRule(rule.Selector, props);
     }
 
     private static StyleProperty CloneProperty(StyleProperty property, ref int count)
     {
-        if (property.Value is not StyleBoxFlat box)
+        // Flat panel backgrounds -> translucent white.
+        if (property.Value is StyleBoxFlat box)
+        {
+            var bg = box.BackgroundColor;
+            if (bg.A >= 0.99f)
+            {
+                var glass = new StyleBoxFlat(box)
+                {
+                    BackgroundColor = Whiten(bg),
+                    BorderColor = GlassBorder,
+                };
+                count++;
+                return new StyleProperty(property.Name, glass);
+            }
             return property;
+        }
 
-        var glass = new StyleBoxFlat(box);
-        var bg = Glassify(glass.BackgroundColor, GlassBackgroundAlpha, GlassWhiten);
-        if (bg.A < glass.BackgroundColor.A)
+        // Textured panel backgrounds (windows, chat, ...) -> white flat glass.
+        if (property.Name == PanelContainer.StylePropertyPanel && property.Value is StyleBoxTexture)
+        {
+            var glass = new StyleBoxFlat
+            {
+                BackgroundColor = new Color(1f, 1f, 1f, GlassBackgroundAlpha),
+                BorderColor = GlassBorder,
+                BorderThickness = new Thickness(2f),
+            };
             count++;
-        glass.BackgroundColor = bg;
-        glass.BorderColor = Glassify(glass.BorderColor, GlassBorderAlpha, GlassBorderLighten);
-        return new StyleProperty(property.Name, glass);
+            return new StyleProperty(property.Name, glass);
+        }
+
+        // Light text -> dark for readability on white glass.
+        if (property.Value is Color color
+            && property.Name.Contains("font")
+            && Luminance(color) > GlassTextMinLuminance
+            && color.A >= 0.99f)
+        {
+            var dark = Darken(color);
+            count++;
+            return new StyleProperty(property.Name, dark);
+        }
+
+        return property;
     }
 
     /// <summary>
@@ -80,17 +90,29 @@ public static class GlassTheme
     /// </summary>
     public static Color GlassifyPanel(Color color)
     {
-        return Glassify(color, GlassBackgroundAlpha, GlassWhiten);
-    }
-
-    private static Color Glassify(Color color, float alpha, float lighten)
-    {
         if (color.A < 0.99f)
             return color;
+        return Whiten(color);
+    }
 
-        var r = color.R + (1f - color.R) * lighten;
-        var g = color.G + (1f - color.G) * lighten;
-        var b = color.B + (1f - color.B) * lighten;
-        return new Color(r, g, b, alpha);
+    private static Color Whiten(Color color)
+    {
+        var r = color.R + (1f - color.R) * GlassWhiteMix;
+        var g = color.G + (1f - color.G) * GlassWhiteMix;
+        var b = color.B + (1f - color.B) * GlassWhiteMix;
+        return new Color(r, g, b, GlassBackgroundAlpha);
+    }
+
+    private static Color Darken(Color color)
+    {
+        var r = color.R * (1f - GlassTextDarken);
+        var g = color.G * (1f - GlassTextDarken);
+        var b = color.B * (1f - GlassTextDarken);
+        return new Color(r, g, b, color.A);
+    }
+
+    private static float Luminance(Color color)
+    {
+        return 0.299f * color.R + 0.587f * color.G + 0.114f * color.B;
     }
 }
