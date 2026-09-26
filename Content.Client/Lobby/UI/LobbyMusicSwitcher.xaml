@@ -2,9 +2,9 @@
               xmlns:lobbyUi="clr-namespace:Content.Client.Lobby.UI"
               Orientation="Vertical"
               SeparationOverride="0">
-    <TextureRect Name="VinylRect" Access="Public" HorizontalAlignment="Left" MinSize="192 137"
+    <TextureRect Name="VinylRect" Access="Public" HorizontalAlignment="Left" MinSize="192 192"
                  Stretch="Scale" MouseFilter="Stop"
-                 TexturePath="/Textures/_Starlight/Interface/Vinyl/vinyl_tilt_2.png" />
+                 TexturePath="/Textures/_Starlight/Interface/Vinyl/vinyl_2.png" />
     <PanelContainer StyleClasses="BackgroundPanel">
         <BoxContainer Orientation="Horizontal" SeparationOverride="4" Margin="4">
             <Button Name="PrevButton" Access="Public" Text="◀" MinWidth="32" />
