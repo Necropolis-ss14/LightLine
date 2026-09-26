@@ -17,8 +17,11 @@ public sealed partial class LobbyMusicSwitcher : BoxContainer
 {
     private static readonly string[] RockFrames =
     {
-        "/Textures/_Starlight/Interface/Vinyl/vinyl.png",
-        "/Textures/_Starlight/Interface/Vinyl/vinyl_flipped.png",
+        "/Textures/_Starlight/Interface/Vinyl/vinyl_tilt_0.png",
+        "/Textures/_Starlight/Interface/Vinyl/vinyl_tilt_1.png",
+        "/Textures/_Starlight/Interface/Vinyl/vinyl_tilt_2.png",
+        "/Textures/_Starlight/Interface/Vinyl/vinyl_tilt_3.png",
+        "/Textures/_Starlight/Interface/Vinyl/vinyl_tilt_4.png",
     };
 
     private const int RockMs = 180;
