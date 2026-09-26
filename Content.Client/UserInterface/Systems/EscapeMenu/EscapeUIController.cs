@@ -22,7 +22,6 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
 {
     [Dependency] private IClientConsoleHost _console = default!;
     [Dependency] private IClientPlayerRolesManager _player = default!;
-    [Dependency] private INullLinkPlayerRolesManager _playerRoles = default!; // NullLink
     [Dependency] private IUriOpener _uri = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private ChangelogUIController _changelog = default!;
@@ -73,20 +72,6 @@ public sealed partial class EscapeUIController : UIController, IOnStateEntered<G
             CloseEscapeWindow();
             _feedback.ToggleWindow();
         };
-
-        // NullLink start
-        _escapeWindow.DiscordButton.OnPressed += _ =>
-        {
-            if(_playerRoles.GetDiscordLink() is string link)
-                _uri.OpenUri(link);
-        };
-
-        _escapeWindow.SteamButton.OnPressed += _ =>
-        {
-            if (_playerRoles.GetSteamLink() is string link)
-                _uri.OpenUri(link);
-        };
-        // NullLink end
 
         _escapeWindow.ChangelogButton.OnPressed += _ =>
         {
