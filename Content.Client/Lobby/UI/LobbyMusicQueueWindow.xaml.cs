@@ -7,6 +7,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Audio;
 using Robust.Shared.IoC;
 using Robust.Shared.Utility;
+using Timer = Robust.Shared.Timing.Timer;
 
 namespace Content.Client.Lobby.UI;
 
@@ -18,7 +19,10 @@ public sealed partial class LobbyMusicQueueWindow : DefaultWindow
 {
     [Dependency] private IResourceCache _resCache = default!;
 
+    private static readonly Dictionary<string, string> NameCache = new();
+
     private ContentAudioSystem? _audio;
+    private readonly List<(Button Button, string Filename)> _rows = new();
 
     public LobbyMusicQueueWindow()
     {
@@ -48,13 +52,20 @@ public sealed partial class LobbyMusicQueueWindow : DefaultWindow
     private void RebuildList()
     {
         TrackList.RemoveAllChildren();
+        _rows.Clear();
         if (_audio?.LobbyPlaylistTracks is not { } playlist)
             return;
 
         var current = _audio.CurrentLobbyTrack;
+        var missing = false;
         foreach (var filename in playlist)
         {
-            var name = TrackDisplayName(filename);
+            var name = TrackDisplayName(filename, false);
+            if (name == null)
+            {
+                name = filename;
+                missing = true;
+            }
             var button = new Button
             {
                 Text = filename == current ? $"▶ {name}" : name,
@@ -64,13 +75,37 @@ public sealed partial class LobbyMusicQueueWindow : DefaultWindow
             var file = filename;
             button.OnPressed += _ => _audio?.PlayLobbyTrack(file);
             TrackList.AddChild(button);
+            _rows.Add((button, filename));
+        }
+
+        // Resolve missing titles after the window is already shown.
+        if (missing)
+            Timer.Spawn(1, FillMissingNames);
+    }
+
+    private void FillMissingNames()
+    {
+        foreach (var (button, filename) in _rows)
+        {
+            if (button.Disposed)
+                return;
+            if (!NameCache.ContainsKey(filename))
+                NameCache[filename] = TrackDisplayName(filename, true) ?? filename;
+            var name = NameCache[filename];
+            button.Text = filename == _audio?.CurrentLobbyTrack ? $"▶ {name}" : name;
         }
     }
 
-    private string TrackDisplayName(string filename)
+    private string? TrackDisplayName(string filename, bool allowLoad)
     {
+        if (NameCache.TryGetValue(filename, out var cached))
+            return cached;
+
+        if (!allowLoad)
+            return null;
+
         if (!_resCache.TryGetResource<AudioResource>(filename, out var resource))
-            return filename;
+            return null;
 
         var stream = resource.AudioStream;
         var title = string.IsNullOrEmpty(stream.Title) ? "?" : stream.Title;

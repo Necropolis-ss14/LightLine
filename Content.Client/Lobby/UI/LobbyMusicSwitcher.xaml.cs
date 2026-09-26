@@ -17,16 +17,13 @@ public sealed partial class LobbyMusicSwitcher : BoxContainer
 {
     private static readonly string[] RockFrames =
     {
-        "/Textures/_Starlight/Interface/Vinyl/rock_0.png",
-        "/Textures/_Starlight/Interface/Vinyl/rock_1.png",
-        "/Textures/_Starlight/Interface/Vinyl/rock_2.png",
-        "/Textures/_Starlight/Interface/Vinyl/rock_3.png",
-        "/Textures/_Starlight/Interface/Vinyl/rock_4.png",
+        "/Textures/_Starlight/Interface/Vinyl/vinyl.png",
+        "/Textures/_Starlight/Interface/Vinyl/vinyl_flipped.png",
     };
 
     private const int RockMs = 180;
 
-    private int _rockIndex = 2;
+    private int _rockIndex;
     private int _rockDirection = 1;
     private bool _rocking;
 
@@ -84,13 +81,13 @@ public sealed partial class LobbyMusicSwitcher : BoxContainer
         switch (step)
         {
             case 0:
-                VinylRect.Margin = new Thickness(0f, -8f, 0f, 8f);
-                break;
-            case 1:
                 VinylRect.Margin = new Thickness(0f, -14f, 0f, 14f);
                 break;
+            case 1:
+                VinylRect.Margin = new Thickness(0f, -26f, 0f, 26f);
+                break;
             case 2:
-                VinylRect.Margin = new Thickness(0f, -4f, 0f, 4f);
+                VinylRect.Margin = new Thickness(0f, -8f, 0f, 8f);
                 break;
             default:
                 VinylRect.Margin = new Thickness(0f);
