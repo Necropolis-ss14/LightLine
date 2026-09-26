@@ -1,5 +1,3 @@
-using System.Globalization;
-using System.Linq;
 using Robust.Client.UserInterface.Controls;
 using Timer = Robust.Shared.Timing.Timer;
 
@@ -61,21 +59,16 @@ public sealed partial class MarqueeLabel : Label
             return;
         }
 
-        var elements = new List<string>();
-        var enumerator = StringInfo.GetTextElementEnumerator(_fullText + Gap);
-        while (enumerator.MoveNext())
-            elements.Add(enumerator.GetTextElement());
-
-        if (elements.Count == 0)
+        var loop = _fullText + Gap;
+        if (loop.Length == 0)
         {
             Text = _fullText;
             return;
         }
 
-        _offset %= elements.Count;
-        var rotated = elements.Skip(_offset).Concat(elements.Take(_offset));
-        Text = string.Concat(rotated);
-        _offset = (_offset + 1) % elements.Count;
+        _offset %= loop.Length;
+        Text = loop[_offset..] + loop[.._offset];
+        _offset = (_offset + 1) % loop.Length;
     }
 
     private bool NeedsScroll()
