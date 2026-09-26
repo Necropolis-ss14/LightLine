@@ -3,8 +3,10 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Client.Stylesheets.Stylesheets;
 using Content.Shared._Starlight.CCVar; // Starlight glass theme toggle
+using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration;
 using Robust.Shared.Maths;
 using Robust.Shared.Reflection;
@@ -86,8 +88,12 @@ namespace Content.Client.Stylesheets
                 return;
             }
 
+            var overlay = GetFadeOverlay(root);
+            // Fade out: blackout 0 -> 1. Fade in: blackout 1 -> 0.
             var t = (step + 1) / (float) (GlassFadeSteps + 1);
-            root.Modulate = new Color(1f, 1f, 1f, fadingOut ? 1f - t : t);
+            var alpha = fadingOut ? t : 1f - t;
+            overlay.PanelOverride = new StyleBoxFlat(new Color(0f, 0f, 0f, alpha));
+            overlay.Visible = true;
             if (step >= GlassFadeSteps - 1)
             {
                 if (fadingOut)
@@ -97,11 +103,31 @@ namespace Content.Client.Stylesheets
                 }
                 else
                 {
-                    root.Modulate = Color.White;
+                    overlay.Visible = false;
                 }
                 return;
             }
             Timer.Spawn(GlassFadeStepMs, () => FadeGlassStep(id, enabled, step + 1, fadingOut));
+        }
+
+        private PanelContainer? _glassFadeOverlay;
+
+        /// <summary>
+        /// Fullscreen click-through blackout rect used for the theme fade.
+        /// </summary>
+        private PanelContainer GetFadeOverlay(Control root)
+        {
+            if (_glassFadeOverlay is { Disposed: false })
+                return _glassFadeOverlay;
+
+            _glassFadeOverlay = new PanelContainer
+            {
+                MouseFilter = Control.MouseFilterMode.Ignore,
+                Visible = false,
+            };
+            LayoutContainer.SetAnchorPreset(_glassFadeOverlay, LayoutContainer.LayoutPreset.Wide);
+            root.AddChild(_glassFadeOverlay);
+            return _glassFadeOverlay;
         }
 
         public HashSet<Type> UnusedSheetlets { get; private set; } = [];
