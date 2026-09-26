@@ -36,6 +36,12 @@ public sealed partial class StarlightCCVars
         CVarDef.Create("game.skip_round_end_eorg_popup", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 
     /// <summary>
+    /// Translucent "liquid glass" interface theme. Turn off for fully opaque panels.
+    /// </summary>
+    public static readonly CVarDef<bool> UIGlassTheme =
+        CVarDef.Create("ui.glass_theme", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /// <summary>
     /// How long to display the EORG popup for.
     /// </summary>
     public static readonly CVarDef<float> RoundEndNoEorgPopupTime =

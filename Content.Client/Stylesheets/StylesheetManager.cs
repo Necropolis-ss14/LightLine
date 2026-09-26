@@ -2,8 +2,10 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Client.Stylesheets.Stylesheets;
+using Content.Shared._Starlight.CCVar; // Starlight glass theme toggle
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
+using Robust.Shared.Configuration;
 using Robust.Shared.Reflection;
 
 #region Starlight
@@ -17,6 +19,7 @@ namespace Content.Client.Stylesheets
         [Dependency] private ILogManager _logManager = default!;
         [Dependency] private IUserInterfaceManager _userInterfaceManager = default!;
         [Dependency] private IReflectionManager _reflection = default!;
+        [Dependency] private IConfigurationManager _cfg = default!; // Starlight glass theme toggle
 
         [Dependency]
         private IResourceCache
@@ -24,6 +27,8 @@ namespace Content.Client.Stylesheets
 
         public Stylesheet SheetNanotrasen { get; private set; } = default!;
         public Stylesheet SheetSystem { get; private set; } = default!;
+
+        public Stylesheet SheetGlassNanotrasen { get; private set; } = default!; // Starlight glass theme
 
         [Obsolete("Update to use SheetNanotrasen instead")]
         public Stylesheet SheetNano { get; private set; } = default!;
@@ -39,6 +44,14 @@ namespace Content.Client.Stylesheets
         public bool TryGetStylesheet(string name, [MaybeNullWhen(false)] out Stylesheet stylesheet)
         {
             return Stylesheets.TryGetValue(name, out stylesheet);
+        }
+
+        /// <summary>
+        /// Starlight: live swap between the opaque and translucent ("liquid glass") interface theme.
+        /// </summary>
+        public void SetGlassTheme(bool enabled)
+        {
+            _userInterfaceManager.Stylesheet = enabled ? SheetGlassNanotrasen : SheetNanotrasen;
         }
 
         public HashSet<Type> UnusedSheetlets { get; private set; } = [];
@@ -59,7 +72,10 @@ namespace Content.Client.Stylesheets
             SheetNano = new StyleNano(_resCache).Stylesheet; // TODO: REMOVE (obsolete)
             SheetSpace = new StyleSpace(_resCache).Stylesheet; // TODO: REMOVE (obsolete)
             Starlight = new StyleStarlight(_resCache).Stylesheet; //🌟Starlight🌟 TODO: REMOVE (obsolete)
-            _userInterfaceManager.Stylesheet = SheetNanotrasen;
+            SheetGlassNanotrasen = GlassTheme.MakeGlass(SheetNanotrasen, out var glassified);
+            sawmill.Debug($"Glass theme variant: {glassified} panels glassified.");
+            // Applies the saved theme immediately and live-swaps on CVar change.
+            _cfg.OnValueChanged(StarlightCCVars.UIGlassTheme, SetGlassTheme, true);
 
             // warn about unused sheetlets
             if (UnusedSheetlets.Count > 0)

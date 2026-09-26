@@ -36,8 +36,9 @@ ui-options-sight-second-color = Вторичный цвет прицела
 
 ## General
 
-ui-starlight = Starlight
+ui-starlight = Daiquiri
 ui-options-auto-punctuate = Автоматически ставить знаки препинания во внутриигровых сообщениях
+ui-options-glass-theme = Полупрозрачность (Beta)
 ui-options-general-ghost-themes = Темы призрака
 ui-options-general-ghost-themes-force-tester = Принудительно показывать вкладку тестера в меню тем призрака
 

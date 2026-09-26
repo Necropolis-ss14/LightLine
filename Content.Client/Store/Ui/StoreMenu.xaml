@@ -1,5 +1,6 @@
 <DefaultWindow
     xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     Title="{Loc 'store-ui-default-title'}"
     MinSize="512 512"
@@ -34,19 +35,13 @@
                 Margin="4"
                 HorizontalExpand="True"
                 PlaceHolder="Search" />
-            <PanelContainer VerticalExpand="True">
-                <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BackgroundColor="#000000FF" />
-                </PanelContainer.PanelOverride>
+            <controls:GlassPanel VerticalExpand="True" GlassColor="#000000FF">
                 <BoxContainer Orientation="Horizontal" VerticalExpand="True">
-                    <PanelContainer VerticalExpand="True">
-                        <PanelContainer.PanelOverride>
-                            <gfx:StyleBoxFlat BackgroundColor="#80808005" />
-                        </PanelContainer.PanelOverride>
+                    <controls:GlassPanel VerticalExpand="True" GlassColor="#80808005">
                         <BoxContainer Name="CategoryListContainer" Orientation="Vertical">
                             <!--  Category buttons are added here by code  -->
                         </BoxContainer>
-                    </PanelContainer>
+                    </controls:GlassPanel>
                     <ScrollContainer
                         Name="StoreListingsScroll"
                         HScrollEnabled="False"
@@ -81,7 +76,7 @@
                             VerticalExpand="True" />
                     </ScrollContainer>
                 </BoxContainer>
-            </PanelContainer>
+            </controls:GlassPanel>
 
             <!--  Starlight  -->
 
@@ -91,10 +86,7 @@
                 StyleClasses="HighDivider"
                 Visible="False" />
 
-            <PanelContainer Name="HoverPreview" MinSize="0 130">
-                <PanelContainer.PanelOverride>
-                    <gfx:StyleBoxFlat BackgroundColor="#181818" />
-                </PanelContainer.PanelOverride>
+            <controls:GlassPanel Name="HoverPreview" MinSize="0 130" GlassColor="#181818">
                 <BoxContainer
                     HorizontalExpand="True"
                     Orientation="Vertical"
@@ -113,7 +105,7 @@
                         Text=""
                         VerticalExpand="False" />
                 </BoxContainer>
-            </PanelContainer>
+            </controls:GlassPanel>
         </BoxContainer>
 
         <!--  Footer  -->

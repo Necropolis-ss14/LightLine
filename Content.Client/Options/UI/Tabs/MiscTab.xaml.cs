@@ -54,6 +54,7 @@ public sealed partial class MiscTab : Control
         Control.AddOptionCheckBox(CCVars.StaticStorageUI, StaticStorageUI);
         // Starlight-start
         Control.AddOptionCheckBox(StarlightCCVars.AutoPunctuate, AutoPunctuate);
+        Control.AddOptionCheckBox(StarlightCCVars.UIGlassTheme, GlassThemeCheckBox);
         Control.AddOptionSlider(StarlightCCVars.ChatSeparatedMinWidth, SeparatedChatWidthSlider, 300, 580);
         Control.AddOptionCheckBox(StarlightCCVars.ForceTestersTab, ForceTestersTab);
         // Starlight-end
